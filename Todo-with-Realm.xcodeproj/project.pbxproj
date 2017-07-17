@@ -13,6 +13,8 @@
 		E1A9C6861F1D044D002B91C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1A9C6851F1D044D002B91C8 /* Assets.xcassets */; };
 		E1A9C6891F1D044D002B91C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A9C6871F1D044D002B91C8 /* LaunchScreen.storyboard */; };
 		E1A9C6941F1D044E002B91C8 /* Todo_with_RealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9C6931F1D044E002B91C8 /* Todo_with_RealmTests.swift */; };
+		E1A9C6A01F1D0707002B91C8 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A9C69F1F1D0707002B91C8 /* Realm.framework */; };
+		E1A9C6A21F1D0714002B91C8 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1A9C6A11F1D0714002B91C8 /* RealmSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		E1A9C68F1F1D044E002B91C8 /* Todo-with-RealmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Todo-with-RealmTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A9C6931F1D044E002B91C8 /* Todo_with_RealmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo_with_RealmTests.swift; sourceTree = "<group>"; };
 		E1A9C6951F1D044E002B91C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1A9C69F1F1D0707002B91C8 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		E1A9C6A11F1D0714002B91C8 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A9C6A21F1D0714002B91C8 /* RealmSwift.framework in Frameworks */,
+				E1A9C6A01F1D0707002B91C8 /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +68,7 @@
 				E1A9C67D1F1D044D002B91C8 /* Todo-with-Realm */,
 				E1A9C6921F1D044E002B91C8 /* Todo-with-RealmTests */,
 				E1A9C67C1F1D044D002B91C8 /* Products */,
+				E1A9C69E1F1D0707002B91C8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +103,15 @@
 			path = "Todo-with-RealmTests";
 			sourceTree = "<group>";
 		};
+		E1A9C69E1F1D0707002B91C8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1A9C6A11F1D0714002B91C8 /* RealmSwift.framework */,
+				E1A9C69F1F1D0707002B91C8 /* Realm.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +122,7 @@
 				E1A9C6771F1D044D002B91C8 /* Sources */,
 				E1A9C6781F1D044D002B91C8 /* Frameworks */,
 				E1A9C6791F1D044D002B91C8 /* Resources */,
+				E1A9C6A31F1D0741002B91C8 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -195,6 +212,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E1A9C6A31F1D0741002B91C8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E1A9C6771F1D044D002B91C8 /* Sources */ = {
@@ -342,6 +377,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9D8UR7H9D4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Todo-with-Realm/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -356,6 +395,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 9D8UR7H9D4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = "Todo-with-Realm/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
