@@ -7,6 +7,20 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol Persistentable {
+
+    func add() -> Bool
+
+    func find(_ id: Int) -> Todo?
+
+    func findAll() -> [Todo]
+
+    func delete(_ id: Int) -> Bool
+
+    func deleteAll() -> Bool
+
+    func update(_ task: String, details: String) -> Bool
+
 }

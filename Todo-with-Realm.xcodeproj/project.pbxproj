@@ -18,6 +18,7 @@
 		E1A9C6AB1F1D09A9002B91C8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9C6AA1F1D09A9002B91C8 /* User.swift */; };
 		E1A9C6AD1F1D0B24002B91C8 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9C6AC1F1D0B24002B91C8 /* Todo.swift */; };
 		E1A9C6B01F1D0FBF002B91C8 /* Persistentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9C6AF1F1D0FBF002B91C8 /* Persistentable.swift */; };
+		E1A9C6B21F1D1083002B91C8 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9C6B11F1D1083002B91C8 /* BaseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		E1A9C6AA1F1D09A9002B91C8 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		E1A9C6AC1F1D0B24002B91C8 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		E1A9C6AF1F1D0FBF002B91C8 /* Persistentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistentable.swift; sourceTree = "<group>"; };
+		E1A9C6B11F1D1083002B91C8 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			children = (
 				E1A9C6AA1F1D09A9002B91C8 /* User.swift */,
 				E1A9C6AC1F1D0B24002B91C8 /* Todo.swift */,
+				E1A9C6B11F1D1083002B91C8 /* BaseModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A9C6B21F1D1083002B91C8 /* BaseModel.swift in Sources */,
 				E1A9C6B01F1D0FBF002B91C8 /* Persistentable.swift in Sources */,
 				E1A9C6811F1D044D002B91C8 /* ViewController.swift in Sources */,
 				E1A9C67F1F1D044D002B91C8 /* AppDelegate.swift in Sources */,
