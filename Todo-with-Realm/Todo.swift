@@ -13,8 +13,11 @@ class Todo: Object {
     dynamic var task: String = ""
     dynamic var detail: String = ""
     dynamic var isComplete: Bool = false
-    dynamic var user: String = "Anonymous"
     dynamic var created: Date = Date()
     dynamic var finished: Date?
     dynamic var deleted: Date?
+}
+
+extension Todo {
+
 }
