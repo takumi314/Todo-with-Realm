@@ -88,6 +88,7 @@
 		E1A9C67D1F1D044D002B91C8 /* Todo-with-Realm */ = {
 			isa = PBXGroup;
 			children = (
+				E1A9C6AE1F1D0EE3002B91C8 /* Managers */,
 				E1A9C6A81F1D08BE002B91C8 /* Views */,
 				E1A9C6A71F1D08A1002B91C8 /* Controllers */,
 				E1A9C6A41F1D0878002B91C8 /* Models */,
@@ -164,6 +165,13 @@
 			children = (
 			);
 			name = Others;
+			sourceTree = "<group>";
+		};
+		E1A9C6AE1F1D0EE3002B91C8 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
