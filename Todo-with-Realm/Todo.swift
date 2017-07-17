@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class Todo: Object {
+class Todo: Object, BaseModel {
     dynamic var task: String = ""
     dynamic var detail: String = ""
     dynamic var isComplete: Bool = false
