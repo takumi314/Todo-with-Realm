@@ -84,6 +84,12 @@
 		E1A9C67D1F1D044D002B91C8 /* Todo-with-Realm */ = {
 			isa = PBXGroup;
 			children = (
+				E1A9C6A81F1D08BE002B91C8 /* Views */,
+				E1A9C6A71F1D08A1002B91C8 /* Controllers */,
+				E1A9C6A41F1D0878002B91C8 /* Models */,
+				E1A9C6A61F1D0894002B91C8 /* Extensions */,
+				E1A9C6A51F1D0881002B91C8 /* Utils */,
+				E1A9C6A91F1D08F4002B91C8 /* Others */,
 				E1A9C67E1F1D044D002B91C8 /* AppDelegate.swift */,
 				E1A9C6801F1D044D002B91C8 /* ViewController.swift */,
 				E1A9C6821F1D044D002B91C8 /* Main.storyboard */,
@@ -110,6 +116,48 @@
 				E1A9C69F1F1D0707002B91C8 /* Realm.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1A9C6A41F1D0878002B91C8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E1A9C6A51F1D0881002B91C8 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		E1A9C6A61F1D0894002B91C8 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		E1A9C6A71F1D08A1002B91C8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E1A9C6A81F1D08BE002B91C8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		E1A9C6A91F1D08F4002B91C8 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,6 +505,7 @@
 				E1A9C69A1F1D044E002B91C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E1A9C69B1F1D044E002B91C8 /* Build configuration list for PBXNativeTarget "Todo-with-RealmTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +514,7 @@
 				E1A9C69D1F1D044E002B91C8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
