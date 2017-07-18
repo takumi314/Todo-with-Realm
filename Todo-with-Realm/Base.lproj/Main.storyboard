@@ -45,6 +45,9 @@
                                                 <constraint firstAttribute="trailing" secondItem="kSd-FP-wMw" secondAttribute="trailing" id="x9u-Nf-idq"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="task" destination="kSd-FP-wMw" id="ZaM-GJ-xsI"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

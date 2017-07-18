@@ -9,5 +9,7 @@
 import UIKit
 
 class TodoCellView: UITableViewCell {
+
+    @IBOutlet weak var task: UILabel!
      
 }
