@@ -20,6 +20,7 @@
 		E1A9C6B01F1D0FBF002B91C8 /* Persistentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9C6AF1F1D0FBF002B91C8 /* Persistentable.swift */; };
 		E1A9C6B21F1D1083002B91C8 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9C6B11F1D1083002B91C8 /* BaseModel.swift */; };
 		E1A9C6B61F1D2506002B91C8 /* TodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9C6B51F1D2506002B91C8 /* TodoRepository.swift */; };
+		E1CC447A1F1E60EF0039CCD2 /* TodoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC44791F1E60EF0039CCD2 /* TodoListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		E1A9C6AF1F1D0FBF002B91C8 /* Persistentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Persistentable.swift; sourceTree = "<group>"; };
 		E1A9C6B11F1D1083002B91C8 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		E1A9C6B51F1D2506002B91C8 /* TodoRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoRepository.swift; sourceTree = "<group>"; };
+		E1CC44791F1E60EF0039CCD2 /* TodoListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				E1A9C6801F1D044D002B91C8 /* RootViewController.swift */,
+				E1CC44791F1E60EF0039CCD2 /* TodoListController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1A9C6B21F1D1083002B91C8 /* BaseModel.swift in Sources */,
+				E1CC447A1F1E60EF0039CCD2 /* TodoListController.swift in Sources */,
 				E1A9C6B01F1D0FBF002B91C8 /* Persistentable.swift in Sources */,
 				E1A9C6811F1D044D002B91C8 /* RootViewController.swift in Sources */,
 				E1A9C6B61F1D2506002B91C8 /* TodoRepository.swift in Sources */,
