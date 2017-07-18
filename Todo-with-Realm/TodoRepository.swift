@@ -1,5 +1,5 @@
 //
-//  Persistentable.swift
+//  TodoRepository.swift
 //  Todo-with-Realm
 //
 //  Created by NishiokaKohei on 2017/07/18.
@@ -9,34 +9,11 @@
 import Foundation
 import RealmSwift
 
-protocol Persistentable {
-
-    static var realm: Realm { get }
-
-    static func count() -> Int
-
-    static func add<T>(_ item: T) -> Bool
-
-    static func find<T, K>(_ id: K) -> T?
-
-    static func findAll<ObjectType>() -> Results<ObjectType>
-
-    static func delete(_ id: Int) -> Bool
-
-    static func deleteAll() -> Bool
-
-    static func update<T>(_ item: T) -> Bool
-
-}
-
-extension Persistentable {
+struct TodoRepository {
 
     static var results: Results<Todo> {
         get {
-            return findAll()
-        }
-        set {
-            
+            return realm.objects(Todo.self)
         }
     }
 
@@ -45,76 +22,68 @@ extension Persistentable {
     }
 
     static func count() -> Int {
-        let realm = try! Realm()
         return realm.objects(Todo.self).count
     }
 
-    static func add<T: Todo>(_ item: T) -> Bool {
-        let realm = try! Realm()
+
+    static func add<T>(_ item: T) -> Bool where T: Todo {
         do {
             try realm.write {
-                realm.add(item)
+                realm.add(item, update: false)
             }
         } catch {
-            debugPrint(error)
             return false
         }
         return true
     }
 
     static func find<T: Todo>(_ id: Int) -> T? {
-        let realm = try! Realm()
         return realm.object(ofType: T.self, forPrimaryKey: id)
     }
 
     static func findAll<T: Todo>() -> Results<T> {
-        let realm = try! Realm()
-        return realm.objects(T.self).sorted(byKeyPath: "id", ascending: true)
+        return realm.objects(T.self)
     }
 
     static func delete(_ id: Int) -> Bool {
-        let realm = try! Realm()
+        let todos = results
+            .filter { $0.id == id }
+            .flatMap { $0 }
+
+        guard todos.count == 1 else {
+            return false
+        }
+
         do {
             try realm.write {
-                // プライマリーキーを指定する
+                realm.delete(todos)
             }
         } catch {
-            debugPrint(error)
             return false
         }
         return true
     }
 
     static func deleteAll() -> Bool {
-        let realm = try! Realm()
         do {
             try realm.write {
                 realm.deleteAll()
             }
         } catch {
-            debugPrint(error)
             return false
         }
         return true
     }
 
-    static func update(_ item: Todo) -> Bool {
-        let realm = try! Realm()
+    static func update<T: Todo>(_ item: T) -> Bool {
         do {
             try realm.write {
                 realm.add(item, update: true)
             }
         } catch {
-            debugPrint(error)
             return false
         }
         return true
     }
 
 }
-
-
-
-
-
-
