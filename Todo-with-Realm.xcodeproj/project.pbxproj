@@ -134,7 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				E1A9C6AA1F1D09A9002B91C8 /* User.swift */,
-				E1A9C6AC1F1D0B24002B91C8 /* Todo.swift */,
 				E1A9C6B11F1D1083002B91C8 /* BaseModel.swift */,
 			);
 			name = Models;
@@ -167,7 +166,6 @@
 		E1A9C6A81F1D08BE002B91C8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				E1A9C6871F1D044D002B91C8 /* LaunchScreen.storyboard */,
 				E1A9C6821F1D044D002B91C8 /* Main.storyboard */,
 				E1CC447B1F1E667B0039CCD2 /* TodoCellView.swift */,
 			);
@@ -180,6 +178,8 @@
 				E1A9C67E1F1D044D002B91C8 /* AppDelegate.swift */,
 				E1A9C6851F1D044D002B91C8 /* Assets.xcassets */,
 				E1A9C68A1F1D044D002B91C8 /* Info.plist */,
+				E1A9C6871F1D044D002B91C8 /* LaunchScreen.storyboard */,
+				E1A9C6AC1F1D0B24002B91C8 /* Todo.swift */,
 			);
 			name = Others;
 			sourceTree = "<group>";

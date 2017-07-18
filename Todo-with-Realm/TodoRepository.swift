@@ -11,6 +11,12 @@ import RealmSwift
 
 struct TodoRepository {
 
+    static let repo = TodoRepository()
+
+    static var current: [Todo] {
+        return results.sorted { $0.created < $1.created }
+    }
+
     static var results: Results<Todo> {
         get {
             return realm.objects(Todo.self)
@@ -22,7 +28,7 @@ struct TodoRepository {
     }
 
     static func count() -> Int {
-        return realm.objects(Todo.self).count
+        return self.realm.objects(Todo.self).count
     }
 
 
