@@ -30,6 +30,20 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o38-x9-CA4" id="eM4-ay-w09" customClass="TodoCellView" customModule="Todo_with_Realm" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="342" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSd-FP-wMw">
+                                                    <rect key="frame" x="16" y="0.0" width="326" height="55.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="kSd-FP-wMw" firstAttribute="leading" secondItem="eM4-ay-w09" secondAttribute="leading" constant="16" id="X02-5L-Sdw"/>
+                                                <constraint firstAttribute="bottom" secondItem="kSd-FP-wMw" secondAttribute="bottom" constant="4" id="drN-Dm-2bU"/>
+                                                <constraint firstItem="kSd-FP-wMw" firstAttribute="top" secondItem="eM4-ay-w09" secondAttribute="top" id="iT7-kr-pF5"/>
+                                                <constraint firstAttribute="trailing" secondItem="kSd-FP-wMw" secondAttribute="trailing" id="x9u-Nf-idq"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
