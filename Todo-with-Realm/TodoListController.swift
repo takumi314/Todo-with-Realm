@@ -11,14 +11,24 @@ import UIKit
 class TodoListController: UIViewController {
 
     // MSRK: - Outlets
-
-    @IBOutlet weak var ListTable: UITableView!
+    @IBOutlet weak var listTopBar: UINavigationBar!
+    @IBOutlet weak var listTable: UITableView!
+    @IBOutlet weak var addingButtonItem: UIBarButtonItem!
 
 
     // MARK: - Private properties
 
-    var source: [Todo] {
+    fileprivate var source: [Todo] {
         return TodoRepository.current
+    }
+
+    fileprivate struct Const {
+        static let main = Const()
+        let title = "Todo List"
+        let alertTitle = "New task"
+        let message = "Please fill in and tap OK, or Cancel."
+        let ok = "OK"
+        let cancel = "Cancel"
     }
 
     // MARK: - Life cycle
@@ -27,9 +37,43 @@ class TodoListController: UIViewController {
         super.viewDidLoad()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        listTopBar.topItem?.title = Const.main.title
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+
+    // MARK: - IBActions
+
+    @IBAction func didTapButton(_ sender: UIButton) {
+        print("did tap button")
+        didOpenForm()
+    }
+
+    @IBAction func didTapAddingItem(_ sender: UIBarButtonItem) {
+        print("did tap buttonItem")
+        didOpenForm()
+    }
+
+    func didOpenForm() {
+        let controller = UIAlertController(title: Const.main.alertTitle,
+                                           message: Const.main.message,
+                                           preferredStyle: .alert)
+        let ok = UIAlertAction(title: Const.main.ok,
+                               style: .default,
+                               handler: nil)
+        let cancel = UIAlertAction(title: Const.main.cancel,
+                                   style: .cancel,
+                                   handler: nil)
+
+        controller.addAction(ok)
+        controller.addAction(cancel)
+        present(controller, animated: true, completion: nil)
+    }
+    
 
 }
 
