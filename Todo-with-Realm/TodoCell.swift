@@ -14,28 +14,16 @@ class TodoCell: UITableViewCell {
 
     @IBOutlet weak var task: UILabel!
 
-    // MARK: - Override methods
-
-    override var reuseIdentifier: String {
-        get {
-            return identifier()
-        }
+    static var identifier: String {
+        return String(describing: self)
     }
     
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-    }
-
 }
 
 extension TodoCell {
 
     func setTodo(_ todo: Todo) {
-        self.task.text = todo.task
-    }
-
-    fileprivate func identifier() -> String {
-        return self.description
+        task?.text = todo.task
     }
 
 }
