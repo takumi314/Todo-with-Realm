@@ -20,8 +20,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4lz-pX-PVF">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="HOd-Zv-wcL">
+                                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="pvq-Ix-oXr">
+                                            <connections>
+                                                <action selector="didTapAddingItem:" destination="BYZ-38-t0r" id="ScF-Ps-8eL"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hr5-I9-1jb">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="60" id="o38-x9-CA4" customClass="TodoCellView" customModule="Todo_with_Realm" customModuleProvider="target">
@@ -58,14 +70,20 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hr5-I9-1jb" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="WhZ-qh-m8v"/>
+                            <constraint firstItem="4lz-pX-PVF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="EOV-mg-Wtc"/>
+                            <constraint firstItem="hr5-I9-1jb" firstAttribute="top" secondItem="4lz-pX-PVF" secondAttribute="bottom" id="X9F-ak-uW4"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hr5-I9-1jb" secondAttribute="bottom" id="XUD-Qr-12W"/>
                             <constraint firstAttribute="trailing" secondItem="hr5-I9-1jb" secondAttribute="trailing" id="Xsq-Sc-CmW"/>
+                            <constraint firstAttribute="trailing" secondItem="4lz-pX-PVF" secondAttribute="trailing" id="f6N-jQ-zCW"/>
+                            <constraint firstItem="4lz-pX-PVF" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="foI-zk-Doy"/>
                             <constraint firstItem="hr5-I9-1jb" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ix3-9J-4Gh"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ListTable" destination="hr5-I9-1jb" id="AFR-Om-qIu"/>
+                        <outlet property="addingButtonItem" destination="pvq-Ix-oXr" id="915-HQ-KUa"/>
+                        <outlet property="listTable" destination="hr5-I9-1jb" id="1LA-Ge-WQC"/>
+                        <outlet property="listTopBar" destination="4lz-pX-PVF" id="nU7-5S-eUH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
