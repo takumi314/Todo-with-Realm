@@ -10,12 +10,17 @@ import UIKit
 
 class TodoCell: UITableViewCell {
 
-    @IBOutlet weak var task: UILabel!
     // MARK: - IBOutlets
+
+    @IBOutlet weak var task: UILabel!
+
+    // MARK: - Static properties
 
     static var identifier: String {
         return String(describing: self)
     }
+
+    // MARK: -  Methods
 
     func setTodo(_ todo: Todo) {
         self.task?.text = todo.task
