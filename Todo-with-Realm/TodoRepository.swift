@@ -64,6 +64,7 @@ struct TodoRepository {
             .flatMap { $0 }
 
         guard todos.count == 1 else {
+            print("detect double records")
             return false
         }
 
@@ -72,6 +73,7 @@ struct TodoRepository {
                 realm.delete(todos)
             }
         } catch {
+            print("error \(error)")
             return false
         }
         return true
