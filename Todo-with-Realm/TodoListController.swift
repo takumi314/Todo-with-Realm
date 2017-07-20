@@ -11,9 +11,9 @@ import UIKit
 class TodoListController: UIViewController {
 
     // MSRK: - Outlets
-    @IBOutlet weak var listTopBar: UINavigationBar!
-    @IBOutlet weak var listTable: UITableView!
-    @IBOutlet weak var addingButtonItem: UIBarButtonItem!
+    @IBOutlet weak fileprivate var listTopBar: UINavigationBar!
+    @IBOutlet weak fileprivate var listTable: UITableView!
+    @IBOutlet weak fileprivate var addingButtonItem: UIBarButtonItem!
 
 
     // MARK: - Private properties
@@ -86,7 +86,6 @@ class TodoListController: UIViewController {
                                     }
                                 }
                                 if TodoRepository.add(todo) { print("Add new todo.") }
-                                self?.fetchAll()
                                 self?.reload()
         })
         let cancel = UIAlertAction(title: Const.main.cancel,
@@ -168,6 +167,15 @@ class TodoListController: UIViewController {
         self.todos = TodoRepository.current().oldest
     }
 
+    func canDeleteTodo(at index: Int) -> Bool {
+        let todo = todos[index]
+        if TodoRepository.delete(todo) {
+            fetchAll()
+            return true
+        }
+        return false
+    }
+
     func update() {
         if listTable?.delegate != nil, listTable?.dataSource != nil {
             listTable?.dataSource = nil
@@ -178,10 +186,9 @@ class TodoListController: UIViewController {
     }
 
     func reload()  {
-//        listTable?.beginUpdates()
+        fetchAll()
         update()
         listTable?.reloadData()
-//        listTable?.endUpdates()
     }
 
 }
@@ -189,7 +196,7 @@ class TodoListController: UIViewController {
 extension TodoListController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return source.count
+        return todos.count
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -207,4 +214,15 @@ extension TodoListController: UITableViewDataSource {
 
 extension TodoListController: UITableViewDelegate {
 
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool { return true }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            listTable?.beginUpdates()
+            if canDeleteTodo(at: indexPath.row) {
+                listTable?.deleteRows(at: [indexPath], with: .fade)
+            }
+            listTable?.endUpdates()
+        }
+    }
 }
