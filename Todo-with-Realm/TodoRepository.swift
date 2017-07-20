@@ -13,8 +13,14 @@ struct TodoRepository {
 
     static let repo = TodoRepository()
 
-    static var current: [Todo] {
-        return results.sorted { $0.created < $1.created }
+    struct current {
+        var oldest: [Todo] {
+            return results.sorted { $0.created < $1.created }
+        }
+        var latest: [Todo] {
+            return results.sorted { $0.created > $1.created }
+        }
+
     }
 
     static var results: Results<Todo> {
@@ -32,7 +38,8 @@ struct TodoRepository {
     }
 
 
-    static func add<T>(_ item: T) -> Bool where T: Todo {
+    static func add<T: Todo>(_ item: T) -> Bool {
+        item.id = item.created.description
         do {
             try realm.write {
                 realm.add(item, update: false)

@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="60" id="o38-x9-CA4" customClass="TodoCellView" customModule="Todo_with_Realm" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TodoCell" rowHeight="60" id="o38-x9-CA4" customClass="TodoCell" customModule="Todo_with_Realm">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o38-x9-CA4" id="eM4-ay-w09" customClass="TodoCellView" customModule="Todo_with_Realm" customModuleProvider="target">
@@ -58,14 +58,10 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="task" destination="kSd-FP-wMw" id="ZaM-GJ-xsI"/>
+                                            <outlet property="task" destination="kSd-FP-wMw" id="gTh-Fd-0tP"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="ldy-kU-G3t"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gxT-bH-hPA"/>
-                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -80,9 +76,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="ListTable" destination="hr5-I9-1jb" id="AFR-Om-qIu"/>
                         <outlet property="addingButtonItem" destination="pvq-Ix-oXr" id="915-HQ-KUa"/>
-                        <outlet property="listTable" destination="hr5-I9-1jb" id="1LA-Ge-WQC"/>
+                        <outlet property="listTable" destination="hr5-I9-1jb" id="Es6-5w-XvL"/>
                         <outlet property="listTopBar" destination="4lz-pX-PVF" id="nU7-5S-eUH"/>
                     </connections>
                 </viewController>

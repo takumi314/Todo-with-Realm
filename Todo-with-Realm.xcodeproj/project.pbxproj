@@ -21,9 +21,10 @@
 		E1A9C6B21F1D1083002B91C8 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9C6B11F1D1083002B91C8 /* BaseModel.swift */; };
 		E1A9C6B61F1D2506002B91C8 /* TodoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9C6B51F1D2506002B91C8 /* TodoRepository.swift */; };
 		E1CC447A1F1E60EF0039CCD2 /* TodoListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC44791F1E60EF0039CCD2 /* TodoListController.swift */; };
-		E1CC447C1F1E667B0039CCD2 /* TodoCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC447B1F1E667B0039CCD2 /* TodoCellView.swift */; };
+		E1CC447C1F1E667B0039CCD2 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC447B1F1E667B0039CCD2 /* TodoCell.swift */; };
 		E1CC447E1F1E67A70039CCD2 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC447D1F1E67A70039CCD2 /* UILabelExtension.swift */; };
 		E1CC44801F1F9D0F0039CCD2 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC447F1F1F9D0F0039CCD2 /* UITextFieldExtension.swift */; };
+		E1CC44821F1FA6DE0039CCD2 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC44811F1FA6DE0039CCD2 /* UIAlertController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +56,10 @@
 		E1A9C6B11F1D1083002B91C8 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		E1A9C6B51F1D2506002B91C8 /* TodoRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoRepository.swift; sourceTree = "<group>"; };
 		E1CC44791F1E60EF0039CCD2 /* TodoListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListController.swift; sourceTree = "<group>"; };
-		E1CC447B1F1E667B0039CCD2 /* TodoCellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCellView.swift; sourceTree = "<group>"; };
+		E1CC447B1F1E667B0039CCD2 /* TodoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 		E1CC447D1F1E67A70039CCD2 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UILabelExtension.swift; path = Extensions/UILabelExtension.swift; sourceTree = "<group>"; };
 		E1CC447F1F1F9D0F0039CCD2 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITextFieldExtension.swift; path = Extensions/UITextFieldExtension.swift; sourceTree = "<group>"; };
+		E1CC44811F1FA6DE0039CCD2 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		E1A9C6A41F1D0878002B91C8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E1A9C6AC1F1D0B24002B91C8 /* Todo.swift */,
 				E1A9C6AA1F1D09A9002B91C8 /* User.swift */,
 				E1A9C6B11F1D1083002B91C8 /* BaseModel.swift */,
 			);
@@ -153,6 +156,7 @@
 			children = (
 				E1CC447D1F1E67A70039CCD2 /* UILabelExtension.swift */,
 				E1CC447F1F1F9D0F0039CCD2 /* UITextFieldExtension.swift */,
+				E1CC44811F1FA6DE0039CCD2 /* UIAlertController.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -170,7 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				E1A9C6821F1D044D002B91C8 /* Main.storyboard */,
-				E1CC447B1F1E667B0039CCD2 /* TodoCellView.swift */,
+				E1CC447B1F1E667B0039CCD2 /* TodoCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -182,7 +186,6 @@
 				E1A9C6851F1D044D002B91C8 /* Assets.xcassets */,
 				E1A9C68A1F1D044D002B91C8 /* Info.plist */,
 				E1A9C6871F1D044D002B91C8 /* LaunchScreen.storyboard */,
-				E1A9C6AC1F1D0B24002B91C8 /* Todo.swift */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -331,9 +334,10 @@
 				E1CC447A1F1E60EF0039CCD2 /* TodoListController.swift in Sources */,
 				E1CC447E1F1E67A70039CCD2 /* UILabelExtension.swift in Sources */,
 				E1A9C6B01F1D0FBF002B91C8 /* Persistentable.swift in Sources */,
+				E1CC44821F1FA6DE0039CCD2 /* UIAlertController.swift in Sources */,
 				E1A9C6811F1D044D002B91C8 /* RootViewController.swift in Sources */,
 				E1CC44801F1F9D0F0039CCD2 /* UITextFieldExtension.swift in Sources */,
-				E1CC447C1F1E667B0039CCD2 /* TodoCellView.swift in Sources */,
+				E1CC447C1F1E667B0039CCD2 /* TodoCell.swift in Sources */,
 				E1A9C6B61F1D2506002B91C8 /* TodoRepository.swift in Sources */,
 				E1A9C67F1F1D044D002B91C8 /* AppDelegate.swift in Sources */,
 				E1A9C6AB1F1D09A9002B91C8 /* User.swift in Sources */,

@@ -10,6 +10,7 @@ import Foundation
 import RealmSwift
 
 class Todo: Object {
+    dynamic var id: String = ""
     dynamic var task: String = ""
     dynamic var detail: String = ""
     dynamic var isComplete: Bool = false
@@ -19,7 +20,7 @@ class Todo: Object {
     dynamic var deleted: Date?
 
     override class func primaryKey() -> String? {
-        return "task"
+        return "id"
     }
 }
 
