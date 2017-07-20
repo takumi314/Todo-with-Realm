@@ -21,7 +21,7 @@ protocol Persistentable {
 
     static func findAll<ObjectType>() -> Results<ObjectType>
 
-    static func delete(_ id: Int) -> Bool
+    static func delete<T>(_ id: T) -> Bool
 
     static func deleteAll() -> Bool
 
@@ -72,7 +72,7 @@ extension Persistentable {
         return realm.objects(T.self).sorted(byKeyPath: "id", ascending: true)
     }
 
-    static func delete(_ id: Int) -> Bool {
+    static func delete<T: Todo>(_ id: T) -> Bool {
         let realm = try! Realm()
         do {
             try realm.write {

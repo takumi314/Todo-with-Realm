@@ -51,9 +51,9 @@ struct TodoRepository {
         return realm.objects(T.self)
     }
 
-    static func delete(_ id: Int) -> Bool {
+    static func delete(_ todo: Todo) -> Bool {
         let todos = results
-            .filter { $0.id == id }
+            .filter { $0 == todo }
             .flatMap { $0 }
 
         guard todos.count == 1 else {

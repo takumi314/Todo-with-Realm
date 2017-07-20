@@ -9,17 +9,17 @@
 import Foundation
 import RealmSwift
 
-class Todo: Object, BaseModel {
-    dynamic var id = 0
+class Todo: Object {
     dynamic var task: String = ""
     dynamic var detail: String = ""
     dynamic var isComplete: Bool = false
+    dynamic var due: Date?
     dynamic var created: Date = Date()
     dynamic var finished: Date?
     dynamic var deleted: Date?
 
     override class func primaryKey() -> String? {
-        return "id"
+        return "task"
     }
 }
 
