@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E1757CC61F23B3D00032FCDC /* TodoDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CC51F23B3D00032FCDC /* TodoDetailController.swift */; };
 		E1A9C67F1F1D044D002B91C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9C67E1F1D044D002B91C8 /* AppDelegate.swift */; };
 		E1A9C6811F1D044D002B91C8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9C6801F1D044D002B91C8 /* RootViewController.swift */; };
 		E1A9C6841F1D044D002B91C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A9C6821F1D044D002B91C8 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E1757CC51F23B3D00032FCDC /* TodoDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoDetailController.swift; sourceTree = "<group>"; };
 		E1A9C67B1F1D044D002B91C8 /* Todo-with-Realm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Todo-with-Realm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A9C67E1F1D044D002B91C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1A9C6801F1D044D002B91C8 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				E1A9C6801F1D044D002B91C8 /* RootViewController.swift */,
 				E1CC44791F1E60EF0039CCD2 /* TodoListController.swift */,
+				E1757CC51F23B3D00032FCDC /* TodoDetailController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			files = (
 				E1A9C6B21F1D1083002B91C8 /* BaseModel.swift in Sources */,
 				E1CC447A1F1E60EF0039CCD2 /* TodoListController.swift in Sources */,
+				E1757CC61F23B3D00032FCDC /* TodoDetailController.swift in Sources */,
 				E1CC447E1F1E67A70039CCD2 /* UILabelExtension.swift in Sources */,
 				E1A9C6B01F1D0FBF002B91C8 /* Persistentable.swift in Sources */,
 				E1CC44821F1FA6DE0039CCD2 /* UIAlertController.swift in Sources */,
