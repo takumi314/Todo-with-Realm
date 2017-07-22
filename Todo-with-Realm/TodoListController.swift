@@ -191,6 +191,11 @@ class TodoListController: UIViewController {
         listTable?.reloadData()
     }
 
+    func didSelectCell(at index: Int) {
+        let selected = todos[index]
+
+    }
+
 }
 
 extension TodoListController: UITableViewDataSource {
@@ -227,6 +232,7 @@ extension TodoListController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 何をするの?
     }
 
-git }
+}
