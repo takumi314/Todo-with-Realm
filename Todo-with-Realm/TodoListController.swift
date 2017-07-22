@@ -225,4 +225,8 @@ extension TodoListController: UITableViewDelegate {
             listTable?.endUpdates()
         }
     }
-}
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    }
+
+git }
