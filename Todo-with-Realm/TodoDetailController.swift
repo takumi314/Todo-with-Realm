@@ -8,6 +8,10 @@
 
 import UIKit
 
-class TodoDetailController: RootViewController {
+class TodoDetailController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 
 }
