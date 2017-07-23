@@ -15,6 +15,12 @@ protocol Nibable: NSObjectProtocol {
 
 extension Nibable {
 
+    static var nibName: String {
+        return className
+    }
 
+    static var nib: UINib {
+        return UINib(nibName: nibName, bundle: Bundle(for: self))
+    }
 
 }
