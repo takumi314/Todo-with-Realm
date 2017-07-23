@@ -12,7 +12,6 @@ protocol TodoInputDelegate {
     func shouldMoveData(_ datePicler: UIDatePicker?)
 }
 
-
 class TodoInputController: UIAlertController {
 
     // MARK: - Public properties
@@ -22,15 +21,6 @@ class TodoInputController: UIAlertController {
     // MARK: - Private prorperties
 
     private var inputDate: UIDatePicker?
-    private var date: UIDatePicker?
-    private var input: String {
-        get {
-            if let text = self.textFields?[2].text {
-                return text
-            }
-            return "3"
-        }
-    }
 
     // MARK: - Enum
 
