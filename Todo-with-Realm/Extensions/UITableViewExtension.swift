@@ -20,4 +20,11 @@ extension UITableView {
         self.register(T.nib, forCellReuseIdentifier: T.identifer)
     }
 
+    ///
+    /// Register a custom cell by the type cell, which is the same as any class type
+    ///
+    func register<T: UITableViewCell>(_ cellType: T.Type) {
+        self.register(T.self, forCellReuseIdentifier: T.identifer)
+    }
+
 }
