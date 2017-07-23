@@ -17,6 +17,8 @@ final class TodoListController: UIViewController {
 
     // MARK: - Private properties
 
+    fileprivate var inputDate = UIDatePicker()
+
     fileprivate var todos = [Todo]()
     fileprivate var source: [Todo] {
         return TodoRepository.current().oldest
@@ -63,104 +65,45 @@ final class TodoListController: UIViewController {
     }
 
     func didOpenForm() {
-        let alert = UIAlertController(title: Const.todoList.alertTitle,
-                                      message: Const.todoList.message,
-                                      preferredStyle: .alert)
-        let ok = UIAlertAction(title: Const.todoList.ok,
-                               style: .default,
-                               handler: { [weak self] action in
-                                let todo = Todo()
-                                alert.textFields?.forEach {
-                                    switch $0.tag {
-                                    case 0:
-                                        todo.task = $0.text!
-                                        break
-                                    case 1:
-                                        todo.detail = $0.text!
-                                        break
-                                    case 2:
-                                        // todo.due = Date($0.text)!
-                                        break
-                                    default:
-                                        break
-                                    }
-                                }
-                                if TodoRepository.add(todo) { print("Add new todo.") }
-                                self?.reload()
-        })
-        let cancel = UIAlertAction(title: Const.todoList.cancel,
-                                   style: .cancel,
-                                   handler: nil)
+        let alert = TodoInputController(title: Const.todoList.alertTitle,
+                                        message: Const.todoList.message,
+                                        preferredStyle: .alert)
+        alert.delegate = self
+        alert.add(.ok(Const.todoList.ok)) { [weak self] action in
+            self?.textFieldHandler(alert)
+            self?.reload()
+        }
+        alert.add(.cancel(Const.todoList.cancel), handler: nil)
+        alert.add(.text(Const.todoList.task), tag: 0, handler: nil)
+        alert.add(.text(Const.todoList.detail), tag: 1, handler: nil)
+        alert.add(.date(Const.todoList.date), tag: 2, handler: nil)
 
-        alert.addAction(ok)
-        alert.addAction(cancel)
-        alert.addTextField(configurationHandler: { field in
-            field.tag = 0
-            field.placeholder = Const.todoList.task
-
-            let label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: 20.0, height: 30.0))
-            label.text = ""
-            field.leftView = label
-            field.leftViewMode = UITextFieldViewMode.always
-        })
-
-        alert.addTextField(configurationHandler: { field in
-            field.tag = 1
-            field.placeholder = Const.todoList.detail
-
-            let label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: 20.0, height: 30.0))
-            label.text = ""
-            field.leftView = label
-            field.leftViewMode = UITextFieldViewMode.always
-
-        })
-
-        let doneItem = UIBarButtonItem(barButtonSystemItem: .done,
-                                   target: self,
-                                   action: #selector(didTapKeyboardDone) )
-        let cancelItem = UIBarButtonItem(barButtonSystemItem: .cancel,
-                                     target: self,
-                                     action: #selector(didTapKeyboardCacel) )
-        let flexibleItem = UIBarButtonItem(barButtonSystemItem: .flexibleSpace,
-                                         target: self,
-                                         action: nil)
-
-        let frame = CGRect(x: 0.0, y: 0.0, width: view.bounds.size.width, height: 35.0)
-        let toolBar = UIToolbar(frame: frame)
-        toolBar.barStyle = .blackTranslucent
-        toolBar.backgroundColor = .white
-        toolBar.items = [doneItem, flexibleItem, cancelItem]
-
-        let datePicker = UIDatePicker()
-        datePicker.addTarget(self, action: #selector(selectDate), for: .valueChanged)
-
-        alert.addTextField(configurationHandler: { field in
-            field.tag = 2
-            field.placeholder = Const.todoList.date
-            let label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: 20.0, height: 30.0))
-            label.text = ""
-            field.leftView = label
-            field.leftViewMode = UITextFieldViewMode.always
-
-
-            field.inputView = datePicker
-            field.inputAccessoryView = toolBar
-        })
-
-        present(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion:nil)
     }
 
-    func didTapKeyboardDone() {
-        print("tap done")
+    private func textFieldHandler(_ alert: TodoInputController) {
+        let todo = Todo()
+        alert.textFields?.forEach {
+            switch $0.tag {
+            case 0:
+                todo.task = $0.text!
+                break
+            case 1:
+                todo.detail = $0.text!
+                break
+            case 2:
+                todo.due = inputDate.date
+                break
+            default:
+                break
+            }
+        }
+        if TodoRepository.add(todo) {
+            print("Add new todo.")
+        }
     }
 
-    func didTapKeyboardCacel() {
-        print("tap cancel")
-    }
-
-    func selectDate() {
-        print("set Date")
-    }
+    // MSRK: - TodoRepository
 
     func fetchAll() {
         print("Succeed fetching \(TodoRepository.current().oldest)")
@@ -203,7 +146,11 @@ final class TodoListController: UIViewController {
 
 }
 
+// MARK: - Storyboardable
+
 extension TodoListController: Storyboardable {}
+
+// MARK: - UITableViewDataSource
 
 extension TodoListController: UITableViewDataSource {
 
@@ -224,6 +171,8 @@ extension TodoListController: UITableViewDataSource {
     }
 }
 
+// MARK: - UITableViewDelegate
+
 extension TodoListController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool { return true }
@@ -240,6 +189,20 @@ extension TodoListController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         didSelectCell(at: indexPath.row)
+    }
+
+}
+
+// MARK: - TodoInputDelegate
+
+extension TodoListController: TodoInputDelegate {
+
+    func shouldMoveData(_ datePicler: UIDatePicker?) {
+        print("from TodoInputController")
+        guard let picker = datePicler else {
+            return
+        }
+        inputDate = picker
     }
 
 }

@@ -9,8 +9,4 @@
 import UIKit
 
 extension UIAlertController: UIPickerViewDelegate {
-
-    func addDatePicker(configurationHandler: ((UIDatePicker) -> Swift.Void)? = nil) {
-    }
-
 }
