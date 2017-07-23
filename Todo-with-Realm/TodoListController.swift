@@ -11,7 +11,6 @@ import UIKit
 class TodoListController: UIViewController {
 
     // MSRK: - Outlets
-    @IBOutlet weak fileprivate var listTopBar: UINavigationBar!
     @IBOutlet weak fileprivate var listTable: UITableView!
     @IBOutlet weak fileprivate var addingButtonItem: UIBarButtonItem!
 
@@ -24,7 +23,8 @@ class TodoListController: UIViewController {
     }
 
     fileprivate struct Const {
-        static let main = Const()
+        static let todoList = Const()
+
         let title = "Todo List"
         let alertTitle = "New task"
         let message = "Please fill in and tap OK, or Cancel."
@@ -48,7 +48,7 @@ class TodoListController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        listTopBar.topItem?.title = Const.main.title
+        navigationController?.navigationBar.topItem?.title = Const.todoList.title
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,10 +63,10 @@ class TodoListController: UIViewController {
     }
 
     func didOpenForm() {
-        let alert = UIAlertController(title: Const.main.alertTitle,
-                                      message: Const.main.message,
+        let alert = UIAlertController(title: Const.todoList.alertTitle,
+                                      message: Const.todoList.message,
                                       preferredStyle: .alert)
-        let ok = UIAlertAction(title: Const.main.ok,
+        let ok = UIAlertAction(title: Const.todoList.ok,
                                style: .default,
                                handler: { [weak self] action in
                                 let todo = Todo()
@@ -88,7 +88,7 @@ class TodoListController: UIViewController {
                                 if TodoRepository.add(todo) { print("Add new todo.") }
                                 self?.reload()
         })
-        let cancel = UIAlertAction(title: Const.main.cancel,
+        let cancel = UIAlertAction(title: Const.todoList.cancel,
                                    style: .cancel,
                                    handler: nil)
 
@@ -96,7 +96,7 @@ class TodoListController: UIViewController {
         alert.addAction(cancel)
         alert.addTextField(configurationHandler: { field in
             field.tag = 0
-            field.placeholder = Const.main.task
+            field.placeholder = Const.todoList.task
 
             let label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: 20.0, height: 30.0))
             label.text = ""
@@ -106,7 +106,7 @@ class TodoListController: UIViewController {
 
         alert.addTextField(configurationHandler: { field in
             field.tag = 1
-            field.placeholder = Const.main.detail
+            field.placeholder = Const.todoList.detail
 
             let label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: 20.0, height: 30.0))
             label.text = ""
@@ -136,7 +136,7 @@ class TodoListController: UIViewController {
 
         alert.addTextField(configurationHandler: { field in
             field.tag = 2
-            field.placeholder = Const.main.date
+            field.placeholder = Const.todoList.date
             let label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: 20.0, height: 30.0))
             label.text = ""
             field.leftView = label
@@ -192,8 +192,11 @@ class TodoListController: UIViewController {
     }
 
     func didSelectCell(at index: Int) {
-        let selected = todos[index]
-
+        let todoDetailVC  = TodoDetailController.instantiate()
+        guard let navi = navigationController else {
+            return print("cannot use navigate")
+        }
+        navi.pushViewController(todoDetailVC, animated: true)
     }
 
 }
@@ -232,7 +235,7 @@ extension TodoListController: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // 何をするの?
+        didSelectCell(at: indexPath.row)
     }
 
 }
