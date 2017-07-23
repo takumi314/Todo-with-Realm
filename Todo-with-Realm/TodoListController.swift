@@ -216,7 +216,7 @@ extension TodoListController: UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: TodoCell.identifer) as? TodoCell {
+        if let cell = tableView.dequeueReusableCell(with: TodoCell.self, for: indexPath) {
             cell.setTodo(todos[indexPath.row])
             return cell
         }
