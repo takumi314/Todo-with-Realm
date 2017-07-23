@@ -34,6 +34,11 @@ final class TodoDetailController: UITableViewController {
         setValue(todo)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.topItem?.title = "Content"
+    }
+
     // MARK: - Private methods
 
     private func setValue(_ todo: Todo) {
