@@ -12,13 +12,13 @@ final class TodoDetailController: UITableViewController {
 
     // MARK: - IBOutlets
 
-    @IBOutlet weak var taskCell: UITableViewCell!
-    @IBOutlet weak var detailCell: UITableViewCell!
-    @IBOutlet weak var status: UITableViewCell!
-    @IBOutlet weak var dueCell: UITableViewCell!
-    @IBOutlet weak var created: UITableViewCell!
+    @IBOutlet private weak var taskCell: UITableViewCell!
+    @IBOutlet private weak var detailCell: UITableViewCell!
+    @IBOutlet private weak var status: UITableViewCell!
+    @IBOutlet private weak var dueCell: UITableViewCell!
+    @IBOutlet private weak var created: UITableViewCell!
 
-    // MARK: - public properties
+    // MARK: - Public properties
 
     var todos = [Todo]()
     var todo: Todo? = nil
