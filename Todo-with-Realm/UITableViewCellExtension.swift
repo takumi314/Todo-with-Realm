@@ -10,4 +10,14 @@ import Foundation
 import UIKit
 
 extension UITableViewCell {
+
+    ///
+    /// カスタムUITableViewCellのクラス名と同一なidentifierを返す.
+    ///
+    /// Note: Only a Xib file on a custom cell class.
+    ///
+    static var identifer: String {
+        return className
+    }
+
 }
