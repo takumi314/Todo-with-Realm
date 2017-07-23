@@ -11,7 +11,7 @@
         <!--Todo Detail Controller-->
         <scene sceneID="iqA-h1-Idh">
             <objects>
-                <viewController id="hfQ-qp-7aW" customClass="TodoDetailController" customModule="Todo_with_Realm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TodoDetailController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="hfQ-qp-7aW" customClass="TodoDetailController" customModule="Todo_with_Realm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="50u-TG-LiY"/>
                         <viewControllerLayoutGuide type="bottom" id="0Uv-h8-IKt"/>

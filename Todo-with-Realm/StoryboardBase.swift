@@ -30,11 +30,11 @@ extension Storyboardable where Self: UIViewController {
     }
 
     static func instantiate() -> Self {
-        return UIStoryboard(
+        let story = UIStoryboard(
             name: storyboardName,
             bundle: nil
         )
-        .instantiateInitialViewController() as! Self
+        return story.instantiateViewController(withIdentifier: className) as! Self
     }
 
 }

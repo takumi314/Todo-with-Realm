@@ -8,10 +8,12 @@
 
 import UIKit
 
-class TodoDetailController: UIViewController {
+final class TodoDetailController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
 }
+
+extension TodoDetailController: Storyboardable { }
