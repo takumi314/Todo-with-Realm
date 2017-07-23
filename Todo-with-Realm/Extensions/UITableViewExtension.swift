@@ -27,4 +27,11 @@ extension UITableView {
         self.register(T.self, forCellReuseIdentifier: T.identifer)
     }
 
+    ///
+    /// return custom cell with Type parameter T and indexPath
+    ///
+    func dequeueReusableCell<T: UITableViewCell>(with cellType: T.Type,for indexPath: IndexPath) -> T {
+        return self.dequeueReusableCell(withIdentifier: T.identifer, for: indexPath) as! T
+    }
+
 }
