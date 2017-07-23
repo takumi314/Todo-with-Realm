@@ -10,4 +10,14 @@ import Foundation
 import UIKit
 
 extension UITableView {
+
+    ///
+    /// UITableViewに　Customcell を登録する
+    ///
+    /// T: Type parameter of UITTableViewCell
+    ///
+    func register<T: UITableViewCell>(_ cellType: T.Type) where T: Nibable {
+        self.register(T.nib, forCellReuseIdentifier: T.identifer)
+    }
+
 }
