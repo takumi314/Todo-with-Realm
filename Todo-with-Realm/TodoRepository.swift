@@ -50,7 +50,7 @@ struct TodoRepository {
         return true
     }
 
-    static func find<T: Todo>(_ id: Int) -> T? {
+    static func find<T: Todo>(_ id: String) -> T? {
         return realm.object(ofType: T.self, forPrimaryKey: id)
     }
 

@@ -27,8 +27,7 @@
         <!--Todo List Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <viewController restorationIdentifier="TodoListController" storyboardIdentifier="TodoListController" id="BYZ-38-t0r" customClass="TodoListController" customModule="Todo_with_Realm" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TodoListController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="TodoListController" customModule="Todo_with_Realm" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -78,7 +77,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gzx-zu-49A">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="compose" id="pvq-Ix-oXr">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="compose" id="pvq-Ix-oXr">
                             <connections>
                                 <action selector="didTapAddingItem:" destination="BYZ-38-t0r" id="ScF-Ps-8eL"/>
                             </connections>
@@ -89,6 +88,7 @@
                         <outlet property="listTable" destination="hr5-I9-1jb" id="Es6-5w-XvL"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-543.20000000000005" y="139.880059970015"/>
         </scene>

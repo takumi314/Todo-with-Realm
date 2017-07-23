@@ -8,12 +8,49 @@
 
 import UIKit
 
-final class TodoDetailController: UIViewController {
+final class TodoDetailController: UITableViewController {
+
+    // MARK: - IBOutlets
+
+    @IBOutlet weak var taskCell: UITableViewCell!
+    @IBOutlet weak var detailCell: UITableViewCell!
+    @IBOutlet weak var status: UITableViewCell!
+    @IBOutlet weak var dueCell: UITableViewCell!
+
+    // MARK: - public properties
+
+    var todos = [Todo]()
+    var todo: Todo? = nil
+
+    // MARK:- Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        guard let todo = self.todo else {
+            return
+        }
+        setValue(todo)
+    }
+
+    // MARK: - Private methods
+
+    private func setValue(_ todo: Todo) {
+        self.taskCell.textLabel?.text = todo.task
+        self.detailCell.textLabel?.text = todo.detail
+        self.status.textLabel?.text = todo.isComplete ? "Done" : "Not completed"
+        self.dueCell.textLabel?.text = todo.due?.description
+    }
+
+    func updateData(_ todo: Todo) {
+        if TodoRepository.update(todo) {
+            let keyId = todo.id.description
+            setValue(TodoRepository.find(keyId)!)
+        }
     }
 
 }
+
+
 
 extension TodoDetailController: Storyboardable { }

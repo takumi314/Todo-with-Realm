@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TodoListController: UIViewController {
+final class TodoListController: UIViewController {
 
     // MSRK: - Outlets
     @IBOutlet weak fileprivate var listTable: UITableView!
@@ -193,6 +193,8 @@ class TodoListController: UIViewController {
 
     func didSelectCell(at index: Int) {
         let todoDetailVC  = TodoDetailController.instantiate()
+        todoDetailVC.todo = todos[index]
+
         guard let navi = navigationController else {
             return print("cannot use navigate")
         }
@@ -200,6 +202,8 @@ class TodoListController: UIViewController {
     }
 
 }
+
+extension TodoListController: Storyboardable {}
 
 extension TodoListController: UITableViewDataSource {
 
