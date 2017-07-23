@@ -9,4 +9,6 @@
 import UIKit
 
 protocol Nibable: NSObjectProtocol {
+    var nibName: String { get }
+    var nib: UINib { get }
 }
