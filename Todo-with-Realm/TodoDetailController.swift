@@ -16,6 +16,7 @@ final class TodoDetailController: UITableViewController {
     @IBOutlet weak var detailCell: UITableViewCell!
     @IBOutlet weak var status: UITableViewCell!
     @IBOutlet weak var dueCell: UITableViewCell!
+    @IBOutlet weak var created: UITableViewCell!
 
     // MARK: - public properties
 
@@ -40,6 +41,7 @@ final class TodoDetailController: UITableViewController {
         self.detailCell.textLabel?.text = todo.detail
         self.status.textLabel?.text = todo.isComplete ? "Done" : "Not completed"
         self.dueCell.textLabel?.text = todo.due?.description
+        self.created.textLabel?.text = todo.created.description
     }
 
     func updateData(_ todo: Todo) {

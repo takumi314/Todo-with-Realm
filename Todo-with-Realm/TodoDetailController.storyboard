@@ -22,10 +22,10 @@
                             <tableViewSection headerTitle="Task" id="erz-KK-EX2">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="task" rowHeight="40" id="JTM-kb-Pm9">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JTM-kb-Pm9" id="8D5-gP-ONk">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -34,10 +34,10 @@
                             <tableViewSection headerTitle="Detail" id="02s-k8-xht">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="mly-mR-bZa">
-                                        <rect key="frame" x="0.0" y="136.5" width="375" height="100"/>
+                                        <rect key="frame" x="0.0" y="137" width="375" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" tableViewCell="mly-mR-bZa" id="fbl-zL-S3b">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -46,10 +46,10 @@
                             <tableViewSection headerTitle="Status" id="EGb-4s-DSw">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="RGe-2I-03S">
-                                        <rect key="frame" x="0.0" y="277.5" width="375" height="40"/>
+                                        <rect key="frame" x="0.0" y="278" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RGe-2I-03S" id="1uC-nf-f4S">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="39.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -58,10 +58,22 @@
                             <tableViewSection headerTitle="Due Date" id="ANs-fL-YUW">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="75p-8S-UCR">
-                                        <rect key="frame" x="0.0" y="358.5" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="359" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="75p-8S-UCR" id="VQp-rk-JNm">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Created" id="Naf-PD-sZy">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="VXW-eE-OzC">
+                                        <rect key="frame" x="0.0" y="450" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VXW-eE-OzC" id="3b4-qi-p4a">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -74,6 +86,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="created" destination="VXW-eE-OzC" id="gJL-dG-n7Q"/>
                         <outlet property="detailCell" destination="mly-mR-bZa" id="YVw-pA-jVl"/>
                         <outlet property="dueCell" destination="75p-8S-UCR" id="fOx-QD-UXG"/>
                         <outlet property="status" destination="RGe-2I-03S" id="RcK-Xy-HTl"/>
