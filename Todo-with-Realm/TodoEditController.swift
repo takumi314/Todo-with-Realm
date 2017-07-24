@@ -12,4 +12,24 @@ class TodoEditController: UIViewController {
 
     @IBOutlet weak var editTableView: UITableView!
 
+    fileprivate let viewModel = TodoViewModel()
+
+
+    // MARK; - Life cycle
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        viewModel.reloadSections = { [weak self] section in
+            self?.editTableView.beginUpdates()
+            self?.editTableView.reloadSections([section], with: .fade)
+            self?.editTableView.endUpdates()
+        }
+    }
+
+    func setUpTable() {
+
+    }
+
+
 }
