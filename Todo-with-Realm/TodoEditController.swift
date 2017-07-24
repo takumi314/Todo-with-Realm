@@ -15,7 +15,7 @@ final class TodoEditController: UIViewController {
 
     var todo = Todo()
 
-    fileprivate let viewModel = TodoViewModel()
+    fileprivate var viewModel: TodoViewModel? = nil
 
     // MARK: - Initializer
 
@@ -24,19 +24,30 @@ final class TodoEditController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = TodoViewModel(todo)
 
-        viewModel.reloadSections = { [weak self] section in
+        viewModel?.reloadSections = { [weak self] section in
             self?.editTableView.beginUpdates()
             self?.editTableView.reloadSections([section], with: .fade)
             self?.editTableView.endUpdates()
         }
-        setTopbar()
+        viewModel?.todo = todo
+        setUpTable()
     }
 
     func setTopbar() {
     }
 
     func setUpTable() {
+        editTableView?.estimatedRowHeight = 100
+        editTableView?.rowHeight = UITableViewAutomaticDimension
+        editTableView?.sectionHeaderHeight = 70
+        editTableView?.separatorStyle = .none
+
+        editTableView?.dataSource = viewModel
+        editTableView?.delegate = viewModel
+
+        editTableView?.register(TaskCell.nib, forCellReuseIdentifier: TaskCell.identifier)
 
     }
 

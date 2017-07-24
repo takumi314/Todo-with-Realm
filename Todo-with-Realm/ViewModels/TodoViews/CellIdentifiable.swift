@@ -22,4 +22,8 @@ extension CellIdentifiable {
         return String(describing: className)
     }
 
+    static var identifier: String {
+        return String(describing: className)
+    }
+
 }

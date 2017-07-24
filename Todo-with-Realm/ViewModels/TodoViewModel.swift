@@ -18,13 +18,22 @@ enum TodoViewModelItemType {
 
 class TodoViewModel: NSObject {
 
-    var todoItem = [TodoViewModelItem]()
+    var todo: Todo
+
+    var todoItems = [TodoViewModelItem]()
 
     var reloadSections: ((_ section: Int) -> Void)? = nil
 
     override init() {
-        super.init()
-        
+        self.todo = Todo()
+    }
+
+    convenience init(_ todo: Todo) {
+        self.init()
+        self.todo = todo
+
+        let item = TodoViewModelTaskItem(task: todo.task)
+        todoItems.append(item)
     }
 
 }
@@ -34,17 +43,39 @@ class TodoViewModel: NSObject {
 extension TodoViewModel: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        let item = todoItems[section]
+        guard item.isCollapsible else {
+            return item.rowCount
+        }
+        if item.isCollapsed {
+            return 0
+        } else {
+            return item.rowCount
+        }
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 0
+        return todoItems.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let item = todoItems[indexPath.section]
+        switch item.type {
+        case .task:
+            if let cell = tableView.dequeueReusableCell(with: TaskCell.self, for: indexPath) {
+                cell.item = item
+                return cell
+            }
+        case .detail:
+            break
+        case .status:
+            break
+        case .due:
+            break
+        }
         return UITableViewCell()
     }
-    
+
 }
 
 // MARK: - UITableViewDelegate
