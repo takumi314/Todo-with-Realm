@@ -15,6 +15,7 @@
 		E1757CD01F24841C0032FCDC /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CCF1F24841C0032FCDC /* UITableViewCellExtension.swift */; };
 		E1757CD21F24ED630032FCDC /* NSDateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CD11F24ED620032FCDC /* NSDateFormatterExtension.swift */; };
 		E1757CD41F24F9AD0032FCDC /* TodoInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CD31F24F9AD0032FCDC /* TodoInputController.swift */; };
+		E1757CD61F263DDE0032FCDC /* TodoEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CD51F263DDE0032FCDC /* TodoEditController.swift */; };
 		E1A9C67F1F1D044D002B91C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9C67E1F1D044D002B91C8 /* AppDelegate.swift */; };
 		E1A9C6811F1D044D002B91C8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9C6801F1D044D002B91C8 /* RootViewController.swift */; };
 		E1A9C6841F1D044D002B91C8 /* TodoListController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A9C6821F1D044D002B91C8 /* TodoListController.storyboard */; };
@@ -54,6 +55,7 @@
 		E1757CCF1F24841C0032FCDC /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
 		E1757CD11F24ED620032FCDC /* NSDateFormatterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDateFormatterExtension.swift; path = Extensions/NSDateFormatterExtension.swift; sourceTree = "<group>"; };
 		E1757CD31F24F9AD0032FCDC /* TodoInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoInputController.swift; sourceTree = "<group>"; };
+		E1757CD51F263DDE0032FCDC /* TodoEditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoEditController.swift; sourceTree = "<group>"; };
 		E1A9C67B1F1D044D002B91C8 /* Todo-with-Realm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Todo-with-Realm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A9C67E1F1D044D002B91C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1A9C6801F1D044D002B91C8 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				E1CC44791F1E60EF0039CCD2 /* TodoListController.swift */,
 				E1757CC51F23B3D00032FCDC /* TodoDetailController.swift */,
 				E1757CD31F24F9AD0032FCDC /* TodoInputController.swift */,
+				E1757CD51F263DDE0032FCDC /* TodoEditController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				E1CC447E1F1E67A70039CCD2 /* UILabelExtension.swift in Sources */,
 				E1A9C6B01F1D0FBF002B91C8 /* Persistentable.swift in Sources */,
 				E1CC44821F1FA6DE0039CCD2 /* UIAlertController.swift in Sources */,
+				E1757CD61F263DDE0032FCDC /* TodoEditController.swift in Sources */,
 				E1757CD21F24ED630032FCDC /* NSDateFormatterExtension.swift in Sources */,
 				E1A9C6811F1D044D002B91C8 /* RootViewController.swift in Sources */,
 				E1CC44801F1F9D0F0039CCD2 /* UITextFieldExtension.swift in Sources */,
