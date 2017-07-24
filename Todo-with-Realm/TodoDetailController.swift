@@ -56,8 +56,34 @@ final class TodoDetailController: UITableViewController {
         }
     }
 
+    fileprivate func move(_ todo: Todo) {
+        let editVC = TodoEditController.instantiate()
+        editVC.todo = todo
+        editVC.view.backgroundColor = .cyan
+        present(editVC, animated: true, completion: {
+            print("get to Editing Mode")
+        })
+    }
+
+}
+
+extension TodoDetailController: Storyboardable {}
+
+extension TodoDetailController {
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.section)
+        print(indexPath.row)
+        guard let todo = self.todo else {
+            return
+        }
+        move(todo)
+    }
+
 }
 
 
 
-extension TodoDetailController: Storyboardable { }
+
+
+
