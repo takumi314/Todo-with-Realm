@@ -22,6 +22,8 @@
 		E1757CE11F26453B0032FCDC /* CellIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CE01F26453B0032FCDC /* CellIdentifiable.swift */; };
 		E1757CE31F2647850032FCDC /* TodoEditController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1757CE21F2647850032FCDC /* TodoEditController.storyboard */; };
 		E1757CE51F265CFF0032FCDC /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CE41F265CFF0032FCDC /* TaskCell.swift */; };
+		E1757CE71F265EF30032FCDC /* TodoViewModelTaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CE61F265EF30032FCDC /* TodoViewModelTaskItem.swift */; };
+		E1757CE91F2660060032FCDC /* TaskCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1757CE81F2660060032FCDC /* TaskCell.xib */; };
 		E1A9C67F1F1D044D002B91C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9C67E1F1D044D002B91C8 /* AppDelegate.swift */; };
 		E1A9C6811F1D044D002B91C8 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1A9C6801F1D044D002B91C8 /* RootViewController.swift */; };
 		E1A9C6841F1D044D002B91C8 /* TodoListController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1A9C6821F1D044D002B91C8 /* TodoListController.storyboard */; };
@@ -68,6 +70,8 @@
 		E1757CE01F26453B0032FCDC /* CellIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellIdentifiable.swift; path = ViewModels/TodoViews/CellIdentifiable.swift; sourceTree = "<group>"; };
 		E1757CE21F2647850032FCDC /* TodoEditController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TodoEditController.storyboard; sourceTree = "<group>"; };
 		E1757CE41F265CFF0032FCDC /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaskCell.swift; path = ViewModels/TodoViews/TaskCell.swift; sourceTree = "<group>"; };
+		E1757CE61F265EF30032FCDC /* TodoViewModelTaskItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodoViewModelTaskItem.swift; path = ViewModels/TodoViewModelTaskItem.swift; sourceTree = "<group>"; };
+		E1757CE81F2660060032FCDC /* TaskCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TaskCell.xib; path = ViewModels/TodoViews/TaskCell.xib; sourceTree = "<group>"; };
 		E1A9C67B1F1D044D002B91C8 /* Todo-with-Realm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Todo-with-Realm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1A9C67E1F1D044D002B91C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1A9C6801F1D044D002B91C8 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +119,7 @@
 		E1757CD71F263E920032FCDC /* TodoViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				E1757CE61F265EF30032FCDC /* TodoViewModelTaskItem.swift */,
 				E1757CDD1F2644480032FCDC /* TodoViews */,
 				E1757CD81F263FC30032FCDC /* TodoViewModel.swift */,
 				E1757CDA1F2641CA0032FCDC /* TodoViewModelItem.swift */,
@@ -128,6 +133,7 @@
 				E1757CDE1F26448A0032FCDC /* TodoHeaderView.swift */,
 				E1757CE01F26453B0032FCDC /* CellIdentifiable.swift */,
 				E1757CE41F265CFF0032FCDC /* TaskCell.swift */,
+				E1757CE81F2660060032FCDC /* TaskCell.xib */,
 			);
 			name = TodoViews;
 			sourceTree = "<group>";
@@ -357,6 +363,7 @@
 				E1A9C6861F1D044D002B91C8 /* Assets.xcassets in Resources */,
 				E1757CE31F2647850032FCDC /* TodoEditController.storyboard in Resources */,
 				E1A9C6841F1D044D002B91C8 /* TodoListController.storyboard in Resources */,
+				E1757CE91F2660060032FCDC /* TaskCell.xib in Resources */,
 				E1757CC81F23B5650032FCDC /* TodoDetailController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +414,7 @@
 				E1A9C6811F1D044D002B91C8 /* RootViewController.swift in Sources */,
 				E1CC44801F1F9D0F0039CCD2 /* UITextFieldExtension.swift in Sources */,
 				E1CC447C1F1E667B0039CCD2 /* TodoCell.swift in Sources */,
+				E1757CE71F265EF30032FCDC /* TodoViewModelTaskItem.swift in Sources */,
 				E1757CD91F263FC30032FCDC /* TodoViewModel.swift in Sources */,
 				E1A9C6B61F1D2506002B91C8 /* TodoRepository.swift in Sources */,
 				E1757CCC1F247FC30032FCDC /* NibBase.swift in Sources */,

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskCell" customModule="Todo_with_Realm" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TaskCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="TaskCell" rowHeight="60" id="Pqq-Uj-6eh" customClass="TaskCell" customModule="Todo_with_Realm" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pqq-Uj-6eh" id="UyT-uC-mDN">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="61"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G85-AT-iqA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56.5"/>
+                        <nil key="textColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="G85-AT-iqA" firstAttribute="top" secondItem="UyT-uC-mDN" secondAttribute="top" id="BDR-8L-VGS"/>
+                    <constraint firstItem="G85-AT-iqA" firstAttribute="leading" secondItem="UyT-uC-mDN" secondAttribute="leading" id="KRl-wB-12A"/>
+                    <constraint firstAttribute="trailing" secondItem="G85-AT-iqA" secondAttribute="trailing" id="NCz-jG-u8j"/>
+                    <constraint firstAttribute="bottom" secondItem="G85-AT-iqA" secondAttribute="bottom" constant="4" id="pyg-Gk-5k8"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="textField" destination="G85-AT-iqA" id="FOh-eg-8hm"/>
+            </connections>
+            <point key="canvasLocation" x="-195.5" y="-43.5"/>
+        </tableViewCell>
+    </objects>
+</document>
