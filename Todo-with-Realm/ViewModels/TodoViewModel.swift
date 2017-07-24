@@ -18,6 +18,15 @@ enum TodoViewModelItemType {
 
 class TodoViewModel: NSObject {
 
+    var todoItem = [TodoViewModelItem]()
+
+    var reloadSections: ((_ section: Int) -> Void)? = nil
+
+    override init() {
+        super.init()
+        
+    }
+
 }
 
 // MARK: - UITableViewDataSource
