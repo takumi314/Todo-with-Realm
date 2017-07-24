@@ -8,11 +8,16 @@
 
 import UIKit
 
-class TodoEditController: UIViewController {
+final class TodoEditController: UIViewController {
 
     @IBOutlet weak var editTableView: UITableView!
+    
+
+    var todo = Todo()
 
     fileprivate let viewModel = TodoViewModel()
+
+    // MARK: - Initializer
 
 
     // MARK; - Life cycle
@@ -25,11 +30,29 @@ class TodoEditController: UIViewController {
             self?.editTableView.reloadSections([section], with: .fade)
             self?.editTableView.endUpdates()
         }
+        setTopbar()
+    }
+
+    func setTopbar() {
     }
 
     func setUpTable() {
 
     }
 
+    fileprivate func back() {
+        dismiss(animated: true, completion: nil)
+    }
+
+    @IBAction func didTapSave(_ sender: UIBarButtonItem) {
+        back()
+    }
+    @IBAction func didTapCancel(_ sender: UIBarButtonItem) {
+        back()
+    }
 
 }
+
+// MARK: - Storyboardable
+
+extension TodoEditController: Storyboardable {}
