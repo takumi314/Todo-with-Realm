@@ -22,7 +22,7 @@ class TodoViewModelTaskItem: TodoViewModelItem {
         return "Task"
     }
 
-    var isCollapsed = true
+    var isCollapsed = false
 
     var task: String
 
