@@ -119,8 +119,8 @@
 		E1757CD71F263E920032FCDC /* TodoViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				E1757CE61F265EF30032FCDC /* TodoViewModelTaskItem.swift */,
 				E1757CDD1F2644480032FCDC /* TodoViews */,
+				E1757CE61F265EF30032FCDC /* TodoViewModelTaskItem.swift */,
 				E1757CD81F263FC30032FCDC /* TodoViewModel.swift */,
 				E1757CDA1F2641CA0032FCDC /* TodoViewModelItem.swift */,
 			);
