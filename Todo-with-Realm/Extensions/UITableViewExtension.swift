@@ -34,4 +34,11 @@ extension UITableView {
         return self.dequeueReusableCell(withIdentifier: T.identifer, for: indexPath) as? T
     }
 
+    ///
+    /// return 
+    ///
+    func dequeueReusableHeaderFooterView<T: UITableViewHeaderFooterView>(with headerFooterType: T.Type,for section: Int) -> T? {
+        return self.dequeueReusableHeaderFooterView(withIdentifier: T.identifer) as? T
+    }
+
 }

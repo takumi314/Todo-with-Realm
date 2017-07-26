@@ -1,5 +1,5 @@
 //
-//  TodoViewModelTaskItem.swift
+//  TodoViewModelDueItem.swift
 //  Todo-with-Realm
 //
 //  Created by NishiokaKohei on 2017/07/25.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-class TodoViewModelTaskItem: TodoViewModelItem {
+class TodoViewModelDueItem: TodoViewModelItem {
 
     var type: TodoViewModelItemType {
-        return .task
+        return .due
     }
 
     var isCollapsible: Bool {
@@ -19,15 +19,15 @@ class TodoViewModelTaskItem: TodoViewModelItem {
     }
 
     var sectionTitle: String {
-        return task
+        return dueDate.description
     }
 
     var isCollapsed = true
 
-    var task: String
+    var dueDate: Date
 
-    init(task: String) {
-        self.task = task
+    init(date: Date) {
+        self.dueDate = date
     }
-
+    
 }

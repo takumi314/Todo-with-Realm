@@ -1,17 +1,17 @@
 //
-//  TodoViewModelTaskItem.swift
+//  TodoViewModelDetailItm.swift
 //  Todo-with-Realm
 //
-//  Created by NishiokaKohei on 2017/07/25.
+//  Created by NishiokaKohei on 2017/07/27.
 //  Copyright © 2017年 Kohey. All rights reserved.
 //
 
 import Foundation
 
-class TodoViewModelTaskItem: TodoViewModelItem {
+class TodoViewModelDetailItem: TodoViewModelItem {
 
     var type: TodoViewModelItemType {
-        return .task
+        return .detail
     }
 
     var isCollapsible: Bool {
@@ -19,15 +19,15 @@ class TodoViewModelTaskItem: TodoViewModelItem {
     }
 
     var sectionTitle: String {
-        return task
+        return detail
     }
 
     var isCollapsed = true
 
-    var task: String
+    var detail: String
 
-    init(task: String) {
-        self.task = task
+    init(detail: String) {
+        self.detail = detail
     }
 
 }

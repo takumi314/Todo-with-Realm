@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TodoHeaderDetailView" customModule="Todo_with_Realm" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Detail" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="eVC-O2-yEc">
+                    <rect key="frame" x="8" y="4" width="359" height="86"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="eVC-O2-yEc" secondAttribute="trailing" constant="8" id="eUB-rd-ee7"/>
+                <constraint firstItem="eVC-O2-yEc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="4" id="k6g-Ke-L7m"/>
+                <constraint firstItem="eVC-O2-yEc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="ki0-tH-7Ku"/>
+                <constraint firstAttribute="bottom" secondItem="eVC-O2-yEc" secondAttribute="bottom" constant="4" id="o1B-hn-1Y5"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="textField" destination="eVC-O2-yEc" id="SN8-MJ-5xh"/>
+            </connections>
+            <point key="canvasLocation" x="46" y="-95"/>
+        </view>
+    </objects>
+</document>

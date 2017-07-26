@@ -32,6 +32,7 @@ final class TodoEditController: UIViewController {
             self?.editTableView.endUpdates()
         }
         viewModel?.todo = todo
+        viewModel?.delegate = self
         setUpTable()
     }
 
@@ -47,8 +48,21 @@ final class TodoEditController: UIViewController {
         editTableView?.dataSource = viewModel
         editTableView?.delegate = viewModel
 
-        editTableView?.register(TaskCell.nib, forCellReuseIdentifier: TaskCell.identifier)
+        editTableView?.register(TodoHeaderTaskView.nib, forHeaderFooterViewReuseIdentifier: TodoHeaderTaskView.identifer)
+        editTableView?.register(TodoHeaderDetailView.nib, forHeaderFooterViewReuseIdentifier: TodoHeaderDetailView.identifer)
+        editTableView?.register(TodoHeaderDueView.nib, forHeaderFooterViewReuseIdentifier: TodoHeaderDueView.identifer)
+        editTableView?.register(DueCell.nib, forCellReuseIdentifier: DueCell.identifier)
 
+    }
+
+    func update() {
+        if editTableView?.delegate != nil, editTableView?.dataSource != nil {
+            editTableView?.dataSource = nil
+            editTableView?.delegate = nil
+        }
+        editTableView?.dataSource = viewModel
+        editTableView?.delegate = viewModel
+        editTableView?.reloadData()
     }
 
     fileprivate func back() {
@@ -67,3 +81,13 @@ final class TodoEditController: UIViewController {
 // MARK: - Storyboardable
 
 extension TodoEditController: Storyboardable {}
+
+// MARK: - TodoViewModelDelegate
+
+extension TodoEditController: TodoViewModelDelegate {
+    func didChangeValue(_ todo: Todo) {
+        print("call didChangeValue \(todo)")
+        self.todo = todo
+        update()
+    }
+}
