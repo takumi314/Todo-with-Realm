@@ -25,7 +25,7 @@ class TodoHeaderDetailView: UITableViewHeaderFooterView {
 
     var section: Int = 1
 
-    var delegate: TodoHeaderTaskViewDelegate?
+    var delegate: TodoHeaderDetailViewDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()

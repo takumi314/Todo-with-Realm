@@ -34,11 +34,8 @@ class TodoHeaderTaskView: UITableViewHeaderFooterView {
 
 }
 
-extension TodoHeaderTaskView: HeaderFooterIdentifiable {
-
-}
+extension TodoHeaderTaskView: HeaderFooterIdentifiable {}
 
 extension TodoHeaderTaskView: TableHViewHeaderTouchable {}
 
-extension TodoHeaderTaskView: UITextFieldDelegate {
-}
+extension TodoHeaderTaskView: UITextFieldDelegate {}

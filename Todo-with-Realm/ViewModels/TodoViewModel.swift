@@ -183,21 +183,19 @@ extension TodoViewModel: UITextFieldDelegate {
 
 extension TodoViewModel: TodoHeaderTaskViewDelegate {}
 
+extension TodoViewModel: TodoHeaderDetailViewDelegate {}
+
 extension TodoViewModel: TodoHeaderDueViewDelegate {
 
     func toggleSection(header: TodoHeaderDueView, section: Int) {
         var item = todoItems[section]
         if item.isCollapsible {
-
-            // Toggle collapse
             let collapsed = !item.isCollapsed
             item.isCollapsed = collapsed
             header.setCollapsed(collopsed: collapsed)
 
-            // items is of struct
             todoItems[section] = item
 
-            // Adjust the number of the rows inside the section
             reloadSections?(section)
         }
     }
