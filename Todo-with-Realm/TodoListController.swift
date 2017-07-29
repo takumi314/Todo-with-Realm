@@ -49,6 +49,7 @@ final class TodoListController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        listTable.reloadData()
         super.viewWillAppear(animated)
         navigationController?.navigationBar.topItem?.title = Const.todoList.title
     }
