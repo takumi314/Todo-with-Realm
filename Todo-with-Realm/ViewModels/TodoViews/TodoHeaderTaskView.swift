@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TodoHeaderTaskViewDelegate {
-
+    func changeTask( _ text: String)
 }
 
 class TodoHeaderTaskView: UITableViewHeaderFooterView {
@@ -38,4 +38,18 @@ extension TodoHeaderTaskView: HeaderFooterIdentifiable {}
 
 extension TodoHeaderTaskView: TableHViewHeaderTouchable {}
 
-extension TodoHeaderTaskView: UITextFieldDelegate {}
+extension TodoHeaderTaskView: UITextFieldDelegate {
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let text = textField.text {
+            print(text)
+            delegate?.changeTask(text)
+        }
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+}

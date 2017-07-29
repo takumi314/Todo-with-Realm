@@ -36,6 +36,11 @@ class TodoHeaderDueView: UITableViewHeaderFooterView {
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapHeader)))
     }
 
+    func recieve(_ date: Date) {
+        print("recieved Change Pick Dete")
+        dueLabel.text = date.description
+    }
+
 }
 
 extension TodoHeaderDueView: HeaderFooterIdentifiable {}

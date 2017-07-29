@@ -17,40 +17,40 @@ enum TodoViewModelItemType {
 }
 
 protocol TodoViewModelDelegate {
-    func didChangeValue(_ todo: Todo)
+    func didChangeValue(_ todo: TodoViewModel.Current)
 }
 
 class TodoViewModel: NSObject {
 
-    struct input {
+    struct Current {
         var task: String = ""
         var detail: String = ""
-        var due: Date
+        var due: Date?
     }
 
-    var todo: Todo
+    var source = Current()
 
-    var todoItems = [TodoViewModelItem]()
+    fileprivate var todoItems = [TodoViewModelItem]()
 
     var reloadSections: ((_ section: Int) -> Void)? = nil
 
     var delegate: TodoViewModelDelegate?
 
-    override init() {
-        self.todo = Todo()
-    }
+    override init() {}
 
-    convenience init(_ todo: Todo) {
+    convenience init(task: String, detail: String, due: Date?) {
         self.init()
-        self.todo = todo
+        self.source.task = task
+        self.source.detail = detail
+        self.source.due = due
 
-        let task = TodoViewModelTaskItem(task: todo.task)
+        let task = TodoViewModelTaskItem(task: task)
         todoItems.append(task)
 
-        let detal = TodoViewModelDetailItem(detail: todo.detail)
-        todoItems.append(detal)
+        let detail = TodoViewModelDetailItem(detail: detail)
+        todoItems.append(detail)
 
-        if let due = todo.due {
+        if let due = source.due {
             let dueItem = TodoViewModelDueItem(date: due)
             todoItems.append(dueItem)
         }
@@ -88,8 +88,9 @@ extension TodoViewModel: UITableViewDataSource {
         case .status:
             break
         case .due:
-            if let cell = tableView.dequeueReusableCell(with: DueCell.self, for: indexPath) {
+            if let cell = tableView.dequeueReusableCell(with: DueCell.self, for: indexPath), let item = item as? TodoViewModelDueItem {
                 cell.item = item
+                cell.picker.date = item.dueDate
                 cell.delegate = self
                 return cell
             }
@@ -104,8 +105,7 @@ extension TodoViewModel: UITableViewDataSource {
 
 extension TodoViewModel: UITableViewDelegate {
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) { }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let item = todoItems[section]
@@ -113,35 +113,29 @@ extension TodoViewModel: UITableViewDelegate {
         case .task:
             if let header = tableView.dequeueReusableHeaderFooterView(with: TodoHeaderTaskView.self, for: section) {
                 let item = todoItems[section]
-
                 header.item = item
                 header.section = section
                 header.delegate = self
-                header.textField.delegate = self
-
+                header.textField.delegate = header
                 return header
             }
             break
         case .detail:
             if let header = tableView.dequeueReusableHeaderFooterView(with: TodoHeaderDetailView.self, for: section) {
                 let item = todoItems[section]
-
                 header.item = item
                 header.section = section
                 header.delegate = self
-                header.textField.delegate = self
-
+                header.textField.delegate = header
                 return header
             }
             break
         case .due:
             if let header = tableView.dequeueReusableHeaderFooterView(with: TodoHeaderDueView.self, for: section) {
                 let item = todoItems[section]
-
                 header.item = item
                 header.section = section
                 header.delegate = self
-
                 return header
             }
         default:
@@ -150,52 +144,44 @@ extension TodoViewModel: UITableViewDelegate {
         return UIView()
     }
 
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        let item = todoItems[section]
-        switch item.type {
-        case .task:
-            break
-        case .due:
-            break
-        default:
-            break
+}
+
+extension TodoViewModel: TodoHeaderTaskViewDelegate {
+
+    func changeTask( _ text: String) {
+        print("got message \(String(describing: text))")
+        if let section = section(Of: .task), let item = todoItems[section] as? TodoViewModelTaskItem {
+            source.task = text
+            item.task = text
+            delegate?.didChangeValue(source)
         }
-        return UIView()
     }
 
 }
 
-extension TodoViewModel: UITextFieldDelegate {
+extension TodoViewModel: TodoHeaderDetailViewDelegate {
 
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if let text = textField.text {
-            print(text)
-            delegate?.didChangeValue(todo)
+    func changeDetail( _ text: String) {
+        print("got message \(String(describing: text))")
+        if let section = section(Of: .detail), let item = todoItems[section] as? TodoViewModelDetailItem {
+            source.detail = text
+            item.detail = text
+            delegate?.didChangeValue(source)
         }
     }
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-    
 }
-
-extension TodoViewModel: TodoHeaderTaskViewDelegate {}
-
-extension TodoViewModel: TodoHeaderDetailViewDelegate {}
 
 extension TodoViewModel: TodoHeaderDueViewDelegate {
 
     func toggleSection(header: TodoHeaderDueView, section: Int) {
         var item = todoItems[section]
         if item.isCollapsible {
-            let collapsed = !item.isCollapsed
-            item.isCollapsed = collapsed
-            header.setCollapsed(collopsed: collapsed)
+            let isCollapsed = !item.isCollapsed
+            item.isCollapsed = isCollapsed
+            header.setCollapsed(collopsed: isCollapsed)
 
             todoItems[section] = item
-
             reloadSections?(section)
         }
     }
@@ -204,8 +190,37 @@ extension TodoViewModel: TodoHeaderDueViewDelegate {
 
 extension TodoViewModel: DueCellDelegate {
 
-    func shouldPost(_ date: Date?) {
-        print("got message \(String(describing: date))")
+    func shouldPost(_ date: Date?, section: Int) {
     }
+
+    func changeValue( _ date: Date) {
+        if let section = section(Of: .due), let item = todoItems[section] as? TodoViewModelDueItem {
+            source.due = date
+            item.dueDate = date
+            delegate?.didChangeValue(source)
+            reloadSections?(section)
+        }
+    }
+
+    fileprivate func section(Of itemType: TodoViewModelItemType) -> Int? {
+        for item in todoItems.enumerated() {
+            if item.element.type == itemType {
+                return item.offset
+            }
+        }
+        return nil
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
 

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol TodoHeaderDetailViewDelegate {
-
+    func changeDetail( _ text: String)
 }
 
 class TodoHeaderDetailView: UITableViewHeaderFooterView {
@@ -33,8 +33,23 @@ class TodoHeaderDetailView: UITableViewHeaderFooterView {
 
 }
 
-extension TodoHeaderDetailView: HeaderFooterIdentifiable {
-
-}
+extension TodoHeaderDetailView: HeaderFooterIdentifiable {}
 
 extension TodoHeaderDetailView: TableHViewHeaderTouchable {}
+
+extension TodoHeaderDetailView: UITextFieldDelegate {
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let text = textField.text {
+            print(text)
+            delegate?.changeDetail(text)
+        }
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+    
+}

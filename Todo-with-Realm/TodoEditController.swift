@@ -13,9 +13,9 @@ final class TodoEditController: UIViewController {
     @IBOutlet weak var editTableView: UITableView!
     @IBOutlet weak var updateButton: UIBarButtonItem!
 
-    var todo = Todo()
+    var todo: Todo? = nil
 
-    fileprivate var viewModel: TodoViewModel? = nil
+    var viewModel = TodoViewModel()
 
     // MARK: - Initializer
 
@@ -24,19 +24,18 @@ final class TodoEditController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel = TodoViewModel(todo)
-
-        viewModel?.reloadSections = { [weak self] section in
+        if let v = todo {
+            viewModel = TodoViewModel(task: v.task, detail: v.detail, due: v.due)
+        }
+        viewModel.delegate = self
+        viewModel.reloadSections = { [weak self] section in
             self?.editTableView.beginUpdates()
             self?.editTableView.reloadSections([section], with: .fade)
             self?.editTableView.endUpdates()
         }
-        viewModel?.todo = todo
-        viewModel?.delegate = self
         setUpTable()
     }
 
-    func setTopbar() {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
@@ -44,9 +43,27 @@ final class TodoEditController: UIViewController {
         updateButton.isEnabled = false
     }
 
+
+    // MARK: - IBActions
+
+    @IBAction func didTapSave(_ sender: UIBarButtonItem) {
+        print("\(viewModel.source)")
+        guard let todo = self.todo else { return }
+
+        // 編集データを同期開始
+        let _ = isUpdated(with: todo) { [weak self] in
+            self?.updateButton.isEnabled = false
+            self?.back()
+        }
     }
 
-    func setUpTable() {
+    @IBAction func didTapCancel(_ sender: UIBarButtonItem) {
+        back()
+    }
+
+    // MAEK: private methods
+
+    private func setUpTable() {
         editTableView?.estimatedRowHeight = 100
         editTableView?.rowHeight = UITableViewAutomaticDimension
         editTableView?.sectionHeaderHeight = 70
@@ -59,10 +76,18 @@ final class TodoEditController: UIViewController {
         editTableView?.register(TodoHeaderDetailView.nib, forHeaderFooterViewReuseIdentifier: TodoHeaderDetailView.identifer)
         editTableView?.register(TodoHeaderDueView.nib, forHeaderFooterViewReuseIdentifier: TodoHeaderDueView.identifer)
         editTableView?.register(DueCell.nib, forCellReuseIdentifier: DueCell.identifier)
-
     }
 
-    func update() {
+    fileprivate func isUpdated(with todo: Todo, completion: @escaping () -> Void )  -> Bool {
+        synchronized()
+        if TodoRepository.update(todo) {
+            completion()
+            return true
+        }
+        return false
+    }
+
+    fileprivate func update() {
         if editTableView?.delegate != nil, editTableView?.dataSource != nil {
             editTableView?.dataSource = nil
             editTableView?.delegate = nil
@@ -76,11 +101,16 @@ final class TodoEditController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
-    @IBAction func didTapSave(_ sender: UIBarButtonItem) {
-        back()
-    }
-    @IBAction func didTapCancel(_ sender: UIBarButtonItem) {
-        back()
+    fileprivate func synchronized() {
+        let source = viewModel.source
+        todo?.task = source.task
+        todo?.detail = source.detail
+        todo?.due = source.due
+
+        // 編集済みのため
+        if !updateButton.isEnabled {
+            updateButton.isEnabled = true
+        }
     }
 
 }
@@ -92,9 +122,8 @@ extension TodoEditController: Storyboardable {}
 // MARK: - TodoViewModelDelegate
 
 extension TodoEditController: TodoViewModelDelegate {
-    func didChangeValue(_ todo: Todo) {
+    func didChangeValue(_ todo: TodoViewModel.Current) {
         print("call didChangeValue \(todo)")
-        self.todo = todo
         updateButton.isEnabled = true
         update()
     }

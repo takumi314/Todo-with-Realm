@@ -9,27 +9,20 @@
 import UIKit
 
 protocol DueCellDelegate {
-    func shouldPost(_ date: Date?)
+    func shouldPost(_ date: Date?, section: Int)
+    func changeValue( _ date: Date)
 }
 
 class DueCell: UITableViewCell {
 
-    @IBOutlet private weak var picker: UIDatePicker!
+    @IBOutlet weak var picker: UIDatePicker!
 
-    var item: TodoViewModelItem? {
-        didSet {
-            guard let item = item as? TodoViewModelDueItem else {
-                return
-            }
-            picker.date = item.dueDate
-        }
-    }
+    var item: TodoViewModelItem?
 
     var delegate: DueCellDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
         picker.addTarget(self, action: #selector(didSelectDate), for: .valueChanged)
     }
 
@@ -38,14 +31,10 @@ class DueCell: UITableViewCell {
     }
 
     func didSelectDate(_ sender: UIDatePicker?) {
-        guard let date = sender?.date else {
-            return
-        }
-        delegate?.shouldPost(date)
+        guard let date = sender?.date else { return }
+        delegate?.changeValue(date)
     }
 
 }
 
-extension DueCell: CellIdentifiable {
-    
-}
+extension DueCell: CellIdentifiable { }
