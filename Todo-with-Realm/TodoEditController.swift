@@ -79,8 +79,12 @@ final class TodoEditController: UIViewController {
     }
 
     fileprivate func isUpdated(with todo: Todo, completion: @escaping () -> Void )  -> Bool {
-        synchronized()
-        if TodoRepository.update(todo) {
+        let task = viewModel.source.task
+        let detail = viewModel.source.detail
+        guard let due = viewModel.source.due else { return false }
+        if TodoRepository.update(due: due, for: todo),
+            TodoRepository.update(task: task, for: todo),
+            TodoRepository.update(detail: detail, for: todo) {
             completion()
             return true
         }

@@ -101,4 +101,37 @@ struct TodoRepository {
         return true
     }
 
+    static func update(task: String,for todo: Todo) -> Bool {
+        do {
+            try realm.write {
+                todo.task = task
+            }
+        } catch {
+            return false
+        }
+        return true
+    }
+
+    static func update(detail: String,for todo: Todo) -> Bool {
+        do {
+            try realm.write {
+                todo.detail = detail
+            }
+        } catch {
+            return false
+        }
+        return true
+    }
+
+    static func update(due: Date,for todo: Todo) -> Bool {
+        do {
+            try realm.write {
+                todo.due = due
+            }
+        } catch {
+            return false
+        }
+        return true
+    }
+
 }

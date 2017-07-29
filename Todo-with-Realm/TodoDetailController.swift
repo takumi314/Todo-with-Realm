@@ -27,16 +27,19 @@ final class TodoDetailController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        self.todos = TodoRepository.current().oldest
+        tableView.reloadData()
+
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.topItem?.title = "Content"
 
         guard let todo = self.todo else {
             return
         }
         setValue(todo)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.topItem?.title = "Content"
     }
 
     // MARK: - Private methods
