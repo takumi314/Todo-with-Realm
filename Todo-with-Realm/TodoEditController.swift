@@ -129,6 +129,5 @@ extension TodoEditController: TodoViewModelDelegate {
     func didChangeValue(_ todo: TodoViewModel.Current) {
         print("call didChangeValue \(todo)")
         updateButton.isEnabled = true
-        update()
     }
 }

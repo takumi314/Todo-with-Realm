@@ -50,10 +50,11 @@ class TodoViewModel: NSObject {
         let detail = TodoViewModelDetailItem(detail: detail)
         todoItems.append(detail)
 
+        var dueItem = TodoViewModelDueItem(date: Date())
         if let due = source.due {
-            let dueItem = TodoViewModelDueItem(date: due)
-            todoItems.append(dueItem)
+            dueItem = TodoViewModelDueItem(date: due)
         }
+        todoItems.append(dueItem)
     }
 
 }
