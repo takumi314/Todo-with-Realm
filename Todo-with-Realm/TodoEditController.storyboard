@@ -60,6 +60,7 @@
                     </view>
                     <connections>
                         <outlet property="editTableView" destination="fJl-kc-INi" id="QLF-ue-yAc"/>
+                        <outlet property="updateButton" destination="TKe-dF-s2D" id="ADq-ro-5Ac"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yEl-Ox-uDU" userLabel="First Responder" sceneMemberID="firstResponder"/>

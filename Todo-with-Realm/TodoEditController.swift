@@ -11,7 +11,7 @@ import UIKit
 final class TodoEditController: UIViewController {
 
     @IBOutlet weak var editTableView: UITableView!
-    
+    @IBOutlet weak var updateButton: UIBarButtonItem!
 
     var todo = Todo()
 
@@ -37,6 +37,13 @@ final class TodoEditController: UIViewController {
     }
 
     func setTopbar() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        // disable to save before updating any data source.
+        updateButton.isEnabled = false
+    }
+
     }
 
     func setUpTable() {
@@ -88,6 +95,7 @@ extension TodoEditController: TodoViewModelDelegate {
     func didChangeValue(_ todo: Todo) {
         print("call didChangeValue \(todo)")
         self.todo = todo
+        updateButton.isEnabled = true
         update()
     }
 }
