@@ -93,7 +93,9 @@ final class TodoListController: UIViewController {
                 todo.detail = $0.text!
                 break
             case 2:
-                todo.due = inputDate.date
+                if let _ = $0.text {
+                    todo.due = inputDate.date
+                }
                 break
             default:
                 break
