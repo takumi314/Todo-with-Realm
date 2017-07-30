@@ -133,7 +133,14 @@ class TodoInputController: UIAlertController {
 
         if let field = self.textFields?[2], self.textFields?[2].tag == 2 {
             field.delegate = self
-            field.text = sender.date.description
+
+            let formatter = DateFormatter()
+            formatter.dateFormat = "yyyy/MM/dd hh:mm"
+            formatter.timeZone = TimeZone.autoupdatingCurrent
+            formatter.dateStyle = .medium
+            formatter.timeStyle = .short
+            formatter.locale = Locale.autoupdatingCurrent
+            field.text = formatter.string(from: sender.date)
         }
         delegate?.shouldMoveData(sender)
     }
