@@ -19,18 +19,7 @@ class TodoViewModelDueItem: TodoViewModelItem {
     }
 
     var sectionTitle: String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd hh:mm"
-        formatter.timeZone = TimeZone.autoupdatingCurrent
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
-        formatter.locale = Locale.autoupdatingCurrent
-
-        var due = "No Due yet"
-        if let date = dueDate {
-            due = formatter.string(from: date)
-        }
-        return due
+        return dueDate == nil ? "No Due yet" : DateFormatter().defaultString(from: dueDate)
     }
 
     var isCollapsed = true

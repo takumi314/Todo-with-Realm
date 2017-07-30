@@ -45,29 +45,11 @@ final class TodoDetailController: UITableViewController {
     // MARK: - Private methods
 
     private func setValue(_ todo: Todo) {
-        self.taskCell.textLabel?.text = todo.task
-        self.detailCell.textLabel?.text = todo.detail
-        self.status.textLabel?.text = todo.isComplete ? "Done" : "Not completed"
-
-        var dueString = ""
-        if let due = todo.due {
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy/MM/dd hh:mm"
-            formatter.timeZone = TimeZone.autoupdatingCurrent
-            formatter.dateStyle = .medium
-            formatter.timeStyle = .short
-            formatter.locale = Locale.autoupdatingCurrent
-            dueString = formatter.string(from: due)
-        }
-        self.dueCell.textLabel?.text = dueString
-
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd hh:mm"
-        formatter.timeZone = TimeZone.autoupdatingCurrent
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
-        formatter.locale = Locale.autoupdatingCurrent
-        self.created.textLabel?.text = formatter.string(from: todo.created)
+        taskCell.textLabel?.text = todo.task
+        detailCell.textLabel?.text = todo.detail
+        status.textLabel?.text = todo.isComplete ? "Done" : "Not completed"
+        dueCell.textLabel?.text = DateFormatter().defaultString(from: todo.due)
+        created.textLabel?.text = DateFormatter().defaultString(from: todo.created)
     }
 
     func updateData(_ todo: Todo) {

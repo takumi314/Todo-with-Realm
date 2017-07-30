@@ -13,7 +13,7 @@
 		E1757CCC1F247FC30032FCDC /* NibBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CCB1F247FC30032FCDC /* NibBase.swift */; };
 		E1757CCE1F24831B0032FCDC /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CCD1F24831B0032FCDC /* UITableViewExtension.swift */; };
 		E1757CD01F24841C0032FCDC /* UITableViewCellExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CCF1F24841C0032FCDC /* UITableViewCellExtension.swift */; };
-		E1757CD21F24ED630032FCDC /* NSDateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CD11F24ED620032FCDC /* NSDateFormatterExtension.swift */; };
+		E1757CD21F24ED630032FCDC /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CD11F24ED620032FCDC /* DateFormatterExtension.swift */; };
 		E1757CD41F24F9AD0032FCDC /* TodoInputController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CD31F24F9AD0032FCDC /* TodoInputController.swift */; };
 		E1757CD61F263DDE0032FCDC /* TodoEditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CD51F263DDE0032FCDC /* TodoEditController.swift */; };
 		E1757CD91F263FC30032FCDC /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CD81F263FC30032FCDC /* TodoViewModel.swift */; };
@@ -73,7 +73,7 @@
 		E1757CCB1F247FC30032FCDC /* NibBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibBase.swift; sourceTree = "<group>"; };
 		E1757CCD1F24831B0032FCDC /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITableViewExtension.swift; path = Extensions/UITableViewExtension.swift; sourceTree = "<group>"; };
 		E1757CCF1F24841C0032FCDC /* UITableViewCellExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellExtension.swift; sourceTree = "<group>"; };
-		E1757CD11F24ED620032FCDC /* NSDateFormatterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NSDateFormatterExtension.swift; path = Extensions/NSDateFormatterExtension.swift; sourceTree = "<group>"; };
+		E1757CD11F24ED620032FCDC /* DateFormatterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateFormatterExtension.swift; path = Extensions/DateFormatterExtension.swift; sourceTree = "<group>"; };
 		E1757CD31F24F9AD0032FCDC /* TodoInputController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoInputController.swift; sourceTree = "<group>"; };
 		E1757CD51F263DDE0032FCDC /* TodoEditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoEditController.swift; sourceTree = "<group>"; };
 		E1757CD81F263FC30032FCDC /* TodoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodoViewModel.swift; path = ViewModels/TodoViewModel.swift; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 				E1CC44811F1FA6DE0039CCD2 /* UIAlertController.swift */,
 				E1757CCD1F24831B0032FCDC /* UITableViewExtension.swift */,
 				E1757CCF1F24841C0032FCDC /* UITableViewCellExtension.swift */,
-				E1757CD11F24ED620032FCDC /* NSDateFormatterExtension.swift */,
+				E1757CD11F24ED620032FCDC /* DateFormatterExtension.swift */,
 				E1757CF61F279DA20032FCDC /* UITableViewHeaderFooterView.swift */,
 			);
 			name = Extensions;
@@ -452,7 +452,7 @@
 				E1A9C6B01F1D0FBF002B91C8 /* Persistentable.swift in Sources */,
 				E1CC44821F1FA6DE0039CCD2 /* UIAlertController.swift in Sources */,
 				E1757CD61F263DDE0032FCDC /* TodoEditController.swift in Sources */,
-				E1757CD21F24ED630032FCDC /* NSDateFormatterExtension.swift in Sources */,
+				E1757CD21F24ED630032FCDC /* DateFormatterExtension.swift in Sources */,
 				E1757CDF1F26448A0032FCDC /* TodoHeaderView.swift in Sources */,
 				E1757CFD1F28F8FB0032FCDC /* TodoHeaderDueView.swift in Sources */,
 				E1A9C6811F1D044D002B91C8 /* RootViewController.swift in Sources */,
