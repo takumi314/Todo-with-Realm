@@ -13,7 +13,7 @@ final class Container {
 
     private let realm: Realm
 
-    internal init(realm: Realm) {
+    private init(realm: Realm) {
         self.realm = realm
     }
 
@@ -21,6 +21,7 @@ final class Container {
         try self.init(realm: Realm())
     }
 
+    // execute a transaction with block.
     public func write(_ block: (WriteTransaction) throws -> Void) throws {
         let transaction = WriteTransaction(realm: realm)
         do {
@@ -30,6 +31,12 @@ final class Container {
         } catch {
             print("failed to write")
         }
+    }
+
+    // retrive results which consists of Struct type.
+    public func values<T: Persistable> (_ type: T.Type) -> FetchedResults<T> {
+        let results = realm.objects(T.ManagedObject.self)
+        return FetchedResults(results: results)
     }
 
 }
