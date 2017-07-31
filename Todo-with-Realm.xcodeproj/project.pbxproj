@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E140EED71F2F6751008E8C8A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140EED61F2F6751008E8C8A /* Location.swift */; };
 		E1757CC61F23B3D00032FCDC /* TodoDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CC51F23B3D00032FCDC /* TodoDetailController.swift */; };
 		E1757CC81F23B5650032FCDC /* TodoDetailController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1757CC71F23B5640032FCDC /* TodoDetailController.storyboard */; };
 		E1757CCA1F23BBB30032FCDC /* StoryboardBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CC91F23BBB30032FCDC /* StoryboardBase.swift */; };
@@ -67,6 +68,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E140EED61F2F6751008E8C8A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		E1757CC51F23B3D00032FCDC /* TodoDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoDetailController.swift; sourceTree = "<group>"; };
 		E1757CC71F23B5640032FCDC /* TodoDetailController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TodoDetailController.storyboard; sourceTree = "<group>"; };
 		E1757CC91F23BBB30032FCDC /* StoryboardBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardBase.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				E1A9C6AC1F1D0B24002B91C8 /* Todo.swift */,
 				E1A9C6AA1F1D09A9002B91C8 /* User.swift */,
 				E1A9C6B11F1D1083002B91C8 /* BaseModel.swift */,
+				E140EED61F2F6751008E8C8A /* Location.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 				E1A9C67F1F1D044D002B91C8 /* AppDelegate.swift in Sources */,
 				E1757CE51F265CFF0032FCDC /* TaskCell.swift in Sources */,
 				E1757CEF1F2790160032FCDC /* DueCell.swift in Sources */,
+				E140EED71F2F6751008E8C8A /* Location.swift in Sources */,
 				E1757CD41F24F9AD0032FCDC /* TodoInputController.swift in Sources */,
 				E1757CCA1F23BBB30032FCDC /* StoryboardBase.swift in Sources */,
 				E1A9C6AB1F1D09A9002B91C8 /* User.swift in Sources */,
