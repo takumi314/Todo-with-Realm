@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E140EEE51F30CE85008E8C8A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140EEE41F30CE85008E8C8A /* MapViewController.swift */; };
+		E140EEE71F30CF01008E8C8A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E140EEE61F30CF01008E8C8A /* MapKit.framework */; };
 		E1757CC61F23B3D00032FCDC /* TodoDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CC51F23B3D00032FCDC /* TodoDetailController.swift */; };
 		E1757CC81F23B5650032FCDC /* TodoDetailController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1757CC71F23B5640032FCDC /* TodoDetailController.storyboard */; };
 		E1757CCA1F23BBB30032FCDC /* StoryboardBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CC91F23BBB30032FCDC /* StoryboardBase.swift */; };
@@ -67,6 +69,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E140EEE41F30CE85008E8C8A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		E140EEE61F30CF01008E8C8A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E1757CC51F23B3D00032FCDC /* TodoDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoDetailController.swift; sourceTree = "<group>"; };
 		E1757CC71F23B5640032FCDC /* TodoDetailController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TodoDetailController.storyboard; sourceTree = "<group>"; };
 		E1757CC91F23BBB30032FCDC /* StoryboardBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardBase.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E140EEE71F30CF01008E8C8A /* MapKit.framework in Frameworks */,
 				E1A9C6A21F1D0714002B91C8 /* RealmSwift.framework in Frameworks */,
 				E1A9C6A01F1D0707002B91C8 /* Realm.framework in Frameworks */,
 			);
@@ -220,6 +225,7 @@
 		E1A9C69E1F1D0707002B91C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E140EEE61F30CF01008E8C8A /* MapKit.framework */,
 				E1A9C6A11F1D0714002B91C8 /* RealmSwift.framework */,
 				E1A9C69F1F1D0707002B91C8 /* Realm.framework */,
 			);
@@ -267,6 +273,7 @@
 				E1757CC51F23B3D00032FCDC /* TodoDetailController.swift */,
 				E1757CD31F24F9AD0032FCDC /* TodoInputController.swift */,
 				E1757CD51F263DDE0032FCDC /* TodoEditController.swift */,
+				E140EEE41F30CE85008E8C8A /* MapViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -453,6 +460,7 @@
 				E1CC44821F1FA6DE0039CCD2 /* UIAlertController.swift in Sources */,
 				E1757CD61F263DDE0032FCDC /* TodoEditController.swift in Sources */,
 				E1757CD21F24ED630032FCDC /* DateFormatterExtension.swift in Sources */,
+				E140EEE51F30CE85008E8C8A /* MapViewController.swift in Sources */,
 				E1757CDF1F26448A0032FCDC /* TodoHeaderView.swift in Sources */,
 				E1757CFD1F28F8FB0032FCDC /* TodoHeaderDueView.swift in Sources */,
 				E1A9C6811F1D044D002B91C8 /* RootViewController.swift in Sources */,
