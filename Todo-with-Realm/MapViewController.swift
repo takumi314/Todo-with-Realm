@@ -19,23 +19,29 @@ final class MapViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        map = LocationView().instantiate()
+        map = LocationView()
 
         // 現在座標を取得
-        let region = setRegion(1.0, lon: 1.0)
+        let current = (35.690553, 139.699579)
+        let region = setRegion(lat: current.0, lon: current.1)
         map?.setRegion(region, animated: true)
         map?.setCenter(At: view.center)
         map?.setRect(view.bounds.size)
         map?.addGestureMonitoring()
         map?.tapDelegate = self
-
+        view.addSubview(map!)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
 
-    private func setRegion(_ lat: CLLocationDegrees, lon: CLLocationDegrees) -> MKCoordinateRegion {
+    override func viewDidDisappear(_ animated: Bool) {
+        map?.removeFromSuperview()
+        map = nil
+    }
+
+    private func setRegion(lat: CLLocationDegrees, lon: CLLocationDegrees) -> MKCoordinateRegion {
         let center = CLLocationCoordinate2DMake(lat, lon)
         let span = MKCoordinateSpanMake(0.01, 0.01)
         return MKCoordinateRegionMake(center, span)
