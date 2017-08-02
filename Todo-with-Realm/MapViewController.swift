@@ -11,24 +11,19 @@ import MapKit
 
 final class MapViewController: UIViewController {
 
+    struct Const {
+        let address = "Adress"
+    }
+
+    let const = Const()
+
     var map: LocationView?
 
-    func instantiate() -> LocationView {
-        return LocationView()
-    }
+    // MARK: - Life cycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        map = LocationView()
-
-        // 現在座標を取得
-        let current = (35.690553, 139.699579)
-        let region = setRegion(lat: current.0, lon: current.1)
-        map?.setRegion(region, animated: true)
-        map?.setCenter(At: view.center)
-        map?.setRect(view.bounds.size)
-        map?.addGestureMonitoring()
-        map?.tapDelegate = self
+        createMap()
         view.addSubview(map!)
     }
 
@@ -37,6 +32,29 @@ final class MapViewController: UIViewController {
     }
 
     override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        destoryMap()
+    }
+
+    // MARK: - Private methods
+
+    private func createMap() {
+        map = LocationView()
+
+        let current = (35.690553, 139.699579)
+        let region = setRegion(lat: current.0, lon: current.1)
+        map?.setRegion(region, animated: true)
+        map?.setCenter(At: view.center)
+        map?.setRect(view.bounds.size)
+        map?.addTrackingGesture()
+        map?.tapDelegate = self
+        map?.delegate = map
+    }
+
+    private func destoryMap() {
+        map?.tapDelegate = nil
+        map?.delegate = nil
+        map?.clearAnnotations()
         map?.removeFromSuperview()
         map = nil
     }
@@ -47,29 +65,59 @@ final class MapViewController: UIViewController {
         return MKCoordinateRegionMake(center, span)
     }
 
-    func address(from location: CLLocation) {
-        guard let map = map else { return }
-        let p = location.coordinate
-        let geocoder = CLGeocoder()
-        geocoder.reverseGeocodeLocation(location) { (placemarks , error) in
-            if let error = error {
-                print(error.localizedDescription)
-            }
-            if let placemarks = placemarks, placemarks.count > 0 {
-                placemarks.forEach {
-                    let annotation = MKPointAnnotation()
-                    annotation.coordinate = CLLocationCoordinate2DMake(p.latitude, p.longitude)
-                    annotation.title = "Address"
-                    annotation.subtitle = "\($0.administrativeArea!) \($0.locality!) \($0.thoroughfare!) \($0.subThoroughfare!)"
-                    map.addAnnotation(annotation)
-                }
-            }
-        }
+    private func close() {
+        dismiss(animated: true, completion:nil)
     }
 
 }
 
+// MARK: - MKMap
+
+extension MapViewController {
+
+    fileprivate func address(from location: CLLocation) {
+        guard let map = map else { return }
+        let position = location.coordinate
+        let geocoder = CLGeocoder()
+        
+        geocoder.reverseGeocodeLocation(location) { [weak self] (placemarks , error) in
+            guard let this = self else { return }
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            if let placemarks = placemarks, placemarks.count > 0 {
+                let annotations = this.showAnnotations(placemarks, on: position)
+                map.addAnnotations(annotations)
+            }
+        }
+    }
+
+    private func showAnnotations(_ placemarks: [CLPlacemark],on location: CLLocationCoordinate2D) -> [MKPointAnnotation] {
+        print(placemarks)
+        return placemarks.flatMap({ [weak self] placemark in
+            guard let this = self else { return nil }
+            let annotation = MKPointAnnotation()
+            annotation.coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
+            annotation.title = this.const.address
+            annotation.subtitle = this.subtitle(from: placemark)
+            return annotation
+        })
+    }
+
+    private func subtitle(from mark: CLPlacemark) -> String {
+        return (mark.administrativeArea ?? " ")
+            + (mark.locality ?? " ")
+            + (mark.thoroughfare ?? " ")
+            + (mark.subThoroughfare ?? "")
+    }
+
+}
+
+// MARK: - Storyboardable
+
 extension MapViewController: Storyboardable {}
+
+// MARK: - LocationViewDelegate
 
 extension MapViewController: LocationViewDelegate {
 

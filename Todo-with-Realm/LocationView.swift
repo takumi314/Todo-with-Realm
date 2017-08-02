@@ -17,13 +17,9 @@ class LocationView: MKMapView {
 
     var tapDelegate: LocationViewDelegate?
 
-    func instantiate() -> LocationView {
-        return LocationView()
-    }
-
-    func addGestureMonitoring() {
-        let gesture = UIGestureRecognizer(target: self, action: #selector(didpress(sender:)) )
-        self.addGestureRecognizer(gesture)
+    func addTrackingGesture() {
+        let gesture = UILongPressGestureRecognizer(target: self, action: #selector(didPress(sender:)))
+        addGestureRecognizer(gesture)
     }
 
     func setCenter(At point: CGPoint) {
@@ -34,10 +30,8 @@ class LocationView: MKMapView {
         self.bounds.size = size
     }
 
-
-    func didpress(sender: UILongPressGestureRecognizer){
-        if sender.numberOfTapsRequired == 1 && sender.minimumPressDuration > 0.5 {
-            // 座標取得
+    func didPress(sender: UILongPressGestureRecognizer){
+        if sender.minimumPressDuration == 0.5 {
             if sender.state == .ended {
                 let location = sender.location(in: self)
                 tapDelegate?.didPressMap(location)
@@ -45,6 +39,20 @@ class LocationView: MKMapView {
         }
     }
 
+    func clearAnnotations() {
+        removeAnnotations(annotations)
+    }
+
 }
 
-extension LocationView: Nibable {}
+extension LocationView: Nibable { }
+
+extension LocationView: MKMapViewDelegate {
+
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        print("did tap a annotation")
+    }
+
+    
+
+}
