@@ -77,6 +77,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Gzx-zu-49A">
+                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="G0O-wK-gEi">
+                            <connections>
+                                <action selector="openMap:" destination="BYZ-38-t0r" id="GcC-pw-hXy"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="compose" id="pvq-Ix-oXr">
                             <connections>
                                 <action selector="didTapAddingItem:" destination="BYZ-38-t0r" id="ScF-Ps-8eL"/>

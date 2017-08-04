@@ -60,6 +60,12 @@ final class TodoListController: UIViewController {
 
     // MARK: - IBActions
 
+    @IBAction func openMap(_ sender: UIBarButtonItem) {
+        guard let navi = navigationController else { return }
+        let map = MapViewController()
+        navi.pushViewController(map, animated: true)
+    }
+
     @IBAction func didTapAddingItem(_ sender: UIBarButtonItem) {
         print("did tap buttonItem")
         didOpenForm()
