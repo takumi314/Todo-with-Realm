@@ -9,9 +9,15 @@
 import Foundation
 import CoreLocation
 
-class LocationListener {
+class LocationListener: NSObject {
 
     static let shared = LocationListener()
 
 
+
+
+}
+
+extension LocationListener: CLLocationManagerDelegate {
+    
 }
