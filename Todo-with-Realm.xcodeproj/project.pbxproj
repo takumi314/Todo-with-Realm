@@ -54,6 +54,8 @@
 		E1CC447E1F1E67A70039CCD2 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC447D1F1E67A70039CCD2 /* UILabelExtension.swift */; };
 		E1CC44801F1F9D0F0039CCD2 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC447F1F1F9D0F0039CCD2 /* UITextFieldExtension.swift */; };
 		E1CC44821F1FA6DE0039CCD2 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC44811F1FA6DE0039CCD2 /* UIAlertController.swift */; };
+		E1FC68101F35C2D1008BA493 /* LocationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC680F1F35C2D1008BA493 /* LocationListener.swift */; };
+		E1FC68121F35C2FA008BA493 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FC68111F35C2FA008BA493 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,8 @@
 		E1CC447D1F1E67A70039CCD2 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UILabelExtension.swift; path = Extensions/UILabelExtension.swift; sourceTree = "<group>"; };
 		E1CC447F1F1F9D0F0039CCD2 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITextFieldExtension.swift; path = Extensions/UITextFieldExtension.swift; sourceTree = "<group>"; };
 		E1CC44811F1FA6DE0039CCD2 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
+		E1FC680F1F35C2D1008BA493 /* LocationListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListener.swift; sourceTree = "<group>"; };
+		E1FC68111F35C2FA008BA493 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1FC68121F35C2FA008BA493 /* CoreLocation.framework in Frameworks */,
 				E1A9C6A21F1D0714002B91C8 /* RealmSwift.framework in Frameworks */,
 				E1A9C6A01F1D0707002B91C8 /* Realm.framework in Frameworks */,
 			);
@@ -220,6 +225,7 @@
 		E1A9C69E1F1D0707002B91C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E1FC68111F35C2FA008BA493 /* CoreLocation.framework */,
 				E1A9C6A11F1D0714002B91C8 /* RealmSwift.framework */,
 				E1A9C69F1F1D0707002B91C8 /* Realm.framework */,
 			);
@@ -239,6 +245,7 @@
 		E1A9C6A51F1D0881002B91C8 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				E1FC680F1F35C2D1008BA493 /* LocationListener.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -468,6 +475,7 @@
 				E1757CE51F265CFF0032FCDC /* TaskCell.swift in Sources */,
 				E1757CEF1F2790160032FCDC /* DueCell.swift in Sources */,
 				E1757CD41F24F9AD0032FCDC /* TodoInputController.swift in Sources */,
+				E1FC68101F35C2D1008BA493 /* LocationListener.swift in Sources */,
 				E1757CCA1F23BBB30032FCDC /* StoryboardBase.swift in Sources */,
 				E1A9C6AB1F1D09A9002B91C8 /* User.swift in Sources */,
 				E1757CF71F279DA20032FCDC /* UITableViewHeaderFooterView.swift in Sources */,
