@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>このアプリは, 現在地をTodoを行う場所として登録する際に位置情報サービスを利用します。</string>
+	<string>このアプリは常時, 位置情報に使用されます。</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>このアプリは, 現在地をTodoを行う場所として登録する際に位置情報サービスを利用します。</string>
+	<string>このアプリは, Todoを登録する際に位置情報サービスを利用します。</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
