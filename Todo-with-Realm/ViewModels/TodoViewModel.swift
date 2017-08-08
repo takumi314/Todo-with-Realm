@@ -50,7 +50,7 @@ class TodoViewModel: NSObject {
         let detail = TodoViewModelDetailItem(detail: detail)
         todoItems.append(detail)
 
-        var dueItem = TodoViewModelDueItem(date: Date())
+        var dueItem = TodoViewModelDueItem(date: nil)
         if let due = source.due {
             dueItem = TodoViewModelDueItem(date: due)
         }
@@ -91,7 +91,9 @@ extension TodoViewModel: UITableViewDataSource {
         case .due:
             if let cell = tableView.dequeueReusableCell(with: DueCell.self, for: indexPath), let item = item as? TodoViewModelDueItem {
                 cell.item = item
-                cell.picker.date = item.dueDate
+                if let due = item.dueDate {
+                    cell.picker.date = due
+                }
                 cell.delegate = self
                 return cell
             }

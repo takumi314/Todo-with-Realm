@@ -19,14 +19,14 @@ class TodoViewModelDueItem: TodoViewModelItem {
     }
 
     var sectionTitle: String {
-        return dueDate.description
+        return dueDate == nil ? "No Due yet" : DateFormatter().defaultString(from: dueDate)
     }
 
     var isCollapsed = true
 
-    var dueDate: Date
+    var dueDate: Date?
 
-    init(date: Date) {
+    init(date: Date?) {
         self.dueDate = date
     }
     

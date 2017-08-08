@@ -60,6 +60,12 @@ final class TodoListController: UIViewController {
 
     // MARK: - IBActions
 
+    @IBAction func openMap(_ sender: UIBarButtonItem) {
+        guard let navi = navigationController else { return }
+        let map = MapViewController()
+        navi.pushViewController(map, animated: true)
+    }
+
     @IBAction func didTapAddingItem(_ sender: UIBarButtonItem) {
         print("did tap buttonItem")
         didOpenForm()
@@ -93,7 +99,7 @@ final class TodoListController: UIViewController {
                 todo.detail = $0.text!
                 break
             case 2:
-                if let _ = $0.text {
+                if let text = $0.text, !text.isEmpty {
                     todo.due = inputDate.date
                 }
                 break
