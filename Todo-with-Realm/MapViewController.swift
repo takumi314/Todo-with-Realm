@@ -49,6 +49,8 @@ final class MapViewController: UIViewController {
         map?.region = setRegion(lat: 0.0, lon: 0.0)
         map?.setCenter(At: view.center)
         map?.setRect(view.bounds.size)
+        map?.showsUserLocation = true
+        map?.setUserTrackingMode(.followWithHeading, animated: true)
         map?.addTrackingGesture()
         map?.tapDelegate = self
         map?.delegate = map
