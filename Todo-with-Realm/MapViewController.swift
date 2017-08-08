@@ -33,6 +33,8 @@ final class MapViewController: UIViewController {
 
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
+        LocationListener.shared.delegate = nil
+        LocationListener.shared.close()
         destoryMap()
     }
 
@@ -41,9 +43,10 @@ final class MapViewController: UIViewController {
     private func createMap() {
         map = LocationView()
 
-        let current = (35.690553, 139.699579)
-        let region = setRegion(lat: current.0, lon: current.1)
-        map?.setRegion(region, animated: true)
+        LocationListener.shared.delegate = self
+        LocationListener.shared.ask().update()
+
+        map?.region = setRegion(lat: 0.0, lon: 0.0)
         map?.setCenter(At: view.center)
         map?.setRect(view.bounds.size)
         map?.addTrackingGesture()
@@ -130,4 +133,15 @@ extension MapViewController: LocationViewDelegate {
 
 }
 
-extension MapViewController: MKMapViewDelegate { }
+extension MapViewController: MKMapViewDelegate {}
+
+extension MapViewController: LocationListenerDelegate {
+    func didUpdateLocation() {
+        guard let coodinate = LocationListener.shared.current?.coordinate else {
+            return
+        }
+        let region = setRegion(lat: coodinate.latitude, lon: coodinate.longitude)
+        map?.setRegion(region, animated: true)
+    }
+
+}
