@@ -64,7 +64,7 @@ final class MapViewController: UIViewController {
         map = nil
     }
 
-    private func setRegion(lat: CLLocationDegrees, lon: CLLocationDegrees) -> MKCoordinateRegion {
+    fileprivate func setRegion(lat: CLLocationDegrees, lon: CLLocationDegrees) -> MKCoordinateRegion {
         let center = CLLocationCoordinate2DMake(lat, lon)
         let span = MKCoordinateSpanMake(0.01, 0.01)
         return MKCoordinateRegionMake(center, span)
@@ -127,7 +127,9 @@ extension MapViewController: Storyboardable {}
 extension MapViewController: LocationViewDelegate {
 
     func didPressMap(_ location: CGPoint) {
-        guard let map = map else { return }
+        guard let map = map else {
+            return
+        }
         let geo = map.convert(location, toCoordinateFrom: map)
         let coodinates = CLLocation(latitude: geo.latitude, longitude: geo.longitude)
         address(from: coodinates)
