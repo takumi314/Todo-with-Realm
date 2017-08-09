@@ -189,14 +189,14 @@
 				E1757CE81F2660060032FCDC /* TaskCell.xib */,
 				E1757CEE1F2790160032FCDC /* DueCell.swift */,
 				E1757CF21F2792550032FCDC /* DueCell.xib */,
+				E1FC68131F3B6874008BA493 /* LocationCell.swift */,
+				E1FC68151F3B697B008BA493 /* LocationCell.xib */,
 				E1757CF81F28E9800032FCDC /* TodoHeaderTaskView.swift */,
 				E1757CFA1F28F0540032FCDC /* TodoHeaderTaskView.xib */,
 				E1757CFC1F28F8FB0032FCDC /* TodoHeaderDueView.swift */,
 				E1757CFE1F28FBB40032FCDC /* TodoHeaderDueView.xib */,
 				E1757D001F290CFD0032FCDC /* TodoHeaderDetailView.swift */,
 				E1757D021F2910700032FCDC /* TodoHeaderDetailView.xib */,
-				E1FC68131F3B6874008BA493 /* LocationCell.swift */,
-				E1FC68151F3B697B008BA493 /* LocationCell.xib */,
 			);
 			name = TodoViews;
 			sourceTree = "<group>";
