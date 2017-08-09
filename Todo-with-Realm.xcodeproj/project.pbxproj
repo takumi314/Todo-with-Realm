@@ -65,6 +65,7 @@
 		E1FC68101F35C2D1008BA493 /* LocationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC680F1F35C2D1008BA493 /* LocationListener.swift */; };
 		E1FC68121F35C2FA008BA493 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FC68111F35C2FA008BA493 /* CoreLocation.framework */; };
 		E1FC68141F3B6874008BA493 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC68131F3B6874008BA493 /* LocationCell.swift */; };
+		E1FC68161F3B697B008BA493 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1FC68151F3B697B008BA493 /* LocationCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		E1FC680F1F35C2D1008BA493 /* LocationListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListener.swift; sourceTree = "<group>"; };
 		E1FC68111F35C2FA008BA493 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		E1FC68131F3B6874008BA493 /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationCell.swift; path = ViewModels/TodoViews/LocationCell.swift; sourceTree = "<group>"; };
+		E1FC68151F3B697B008BA493 /* LocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationCell.xib; path = ViewModels/TodoViews/LocationCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +196,7 @@
 				E1757D001F290CFD0032FCDC /* TodoHeaderDetailView.swift */,
 				E1757D021F2910700032FCDC /* TodoHeaderDetailView.xib */,
 				E1FC68131F3B6874008BA493 /* LocationCell.swift */,
+				E1FC68151F3B697B008BA493 /* LocationCell.xib */,
 			);
 			name = TodoViews;
 			sourceTree = "<group>";
@@ -431,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1A9C6891F1D044D002B91C8 /* LaunchScreen.storyboard in Resources */,
+				E1FC68161F3B697B008BA493 /* LocationCell.xib in Resources */,
 				E1A9C6861F1D044D002B91C8 /* Assets.xcassets in Resources */,
 				E1757CF31F2792550032FCDC /* DueCell.xib in Resources */,
 				E1757CE31F2647850032FCDC /* TodoEditController.storyboard in Resources */,
