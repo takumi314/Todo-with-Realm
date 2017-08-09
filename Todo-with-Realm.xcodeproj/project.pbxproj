@@ -10,6 +10,11 @@
 		E140EEE51F30CE85008E8C8A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140EEE41F30CE85008E8C8A /* MapViewController.swift */; };
 		E140EEE71F30CF01008E8C8A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E140EEE61F30CF01008E8C8A /* MapKit.framework */; };
 		E140EEE91F30E1EF008E8C8A /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140EEE81F30E1EF008E8C8A /* LocationView.swift */; };
+		E140EED71F2F6751008E8C8A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140EED61F2F6751008E8C8A /* Location.swift */; };
+		E140EED91F2F7236008E8C8A /* WriteTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140EED81F2F7236008E8C8A /* WriteTransaction.swift */; };
+		E140EEDB1F2F7364008E8C8A /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140EEDA1F2F7364008E8C8A /* Container.swift */; };
+		E140EEDD1F2F769F008E8C8A /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140EEDC1F2F769F008E8C8A /* LocationRepository.swift */; };
+		E140EEDF1F2F791D008E8C8A /* FetchedResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140EEDE1F2F791D008E8C8A /* FetchedResults.swift */; };
 		E1757CC61F23B3D00032FCDC /* TodoDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CC51F23B3D00032FCDC /* TodoDetailController.swift */; };
 		E1757CC81F23B5650032FCDC /* TodoDetailController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1757CC71F23B5640032FCDC /* TodoDetailController.storyboard */; };
 		E1757CCA1F23BBB30032FCDC /* StoryboardBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1757CC91F23BBB30032FCDC /* StoryboardBase.swift */; };
@@ -75,6 +80,11 @@
 		E140EEE41F30CE85008E8C8A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E140EEE61F30CF01008E8C8A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E140EEE81F30E1EF008E8C8A /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
+		E140EED61F2F6751008E8C8A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		E140EED81F2F7236008E8C8A /* WriteTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteTransaction.swift; sourceTree = "<group>"; };
+		E140EEDA1F2F7364008E8C8A /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		E140EEDC1F2F769F008E8C8A /* LocationRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationRepository.swift; sourceTree = "<group>"; };
+		E140EEDE1F2F791D008E8C8A /* FetchedResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResults.swift; sourceTree = "<group>"; };
 		E1757CC51F23B3D00032FCDC /* TodoDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoDetailController.swift; sourceTree = "<group>"; };
 		E1757CC71F23B5640032FCDC /* TodoDetailController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TodoDetailController.storyboard; sourceTree = "<group>"; };
 		E1757CC91F23BBB30032FCDC /* StoryboardBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardBase.swift; sourceTree = "<group>"; };
@@ -246,6 +256,7 @@
 				E1A9C6AC1F1D0B24002B91C8 /* Todo.swift */,
 				E1A9C6AA1F1D09A9002B91C8 /* User.swift */,
 				E1A9C6B11F1D1083002B91C8 /* BaseModel.swift */,
+				E140EED61F2F6751008E8C8A /* Location.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -322,6 +333,10 @@
 			isa = PBXGroup;
 			children = (
 				E1A9C6B51F1D2506002B91C8 /* TodoRepository.swift */,
+				E140EEDC1F2F769F008E8C8A /* LocationRepository.swift */,
+				E140EEDE1F2F791D008E8C8A /* FetchedResults.swift */,
+				E140EED81F2F7236008E8C8A /* WriteTransaction.swift */,
+				E140EEDA1F2F7364008E8C8A /* Container.swift */,
 			);
 			name = Repositories;
 			sourceTree = "<group>";
@@ -457,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E140EEDD1F2F769F008E8C8A /* LocationRepository.swift in Sources */,
 				E1A9C6B21F1D1083002B91C8 /* BaseModel.swift in Sources */,
 				E1757CE11F26453B0032FCDC /* CellIdentifiable.swift in Sources */,
 				E1CC447A1F1E60EF0039CCD2 /* TodoListController.swift in Sources */,
@@ -478,6 +494,8 @@
 				E1CC447C1F1E667B0039CCD2 /* TodoCell.swift in Sources */,
 				E1757CE71F265EF30032FCDC /* TodoViewModelTaskItem.swift in Sources */,
 				E1757CD91F263FC30032FCDC /* TodoViewModel.swift in Sources */,
+				E140EEDF1F2F791D008E8C8A /* FetchedResults.swift in Sources */,
+				E140EEDB1F2F7364008E8C8A /* Container.swift in Sources */,
 				E1757CF11F2790780032FCDC /* TodoViewModelDueItem.swift in Sources */,
 				E1A9C6B61F1D2506002B91C8 /* TodoRepository.swift in Sources */,
 				E1757CCC1F247FC30032FCDC /* NibBase.swift in Sources */,
@@ -486,6 +504,7 @@
 				E1A9C67F1F1D044D002B91C8 /* AppDelegate.swift in Sources */,
 				E1757CE51F265CFF0032FCDC /* TaskCell.swift in Sources */,
 				E1757CEF1F2790160032FCDC /* DueCell.swift in Sources */,
+				E140EED71F2F6751008E8C8A /* Location.swift in Sources */,
 				E1757CD41F24F9AD0032FCDC /* TodoInputController.swift in Sources */,
 				E1FC68101F35C2D1008BA493 /* LocationListener.swift in Sources */,
 				E1757CCA1F23BBB30032FCDC /* StoryboardBase.swift in Sources */,
@@ -493,6 +512,7 @@
 				E1757CF71F279DA20032FCDC /* UITableViewHeaderFooterView.swift in Sources */,
 				E1757CF91F28E9800032FCDC /* TodoHeaderTaskView.swift in Sources */,
 				E1A9C6AD1F1D0B24002B91C8 /* Todo.swift in Sources */,
+				E140EED91F2F7236008E8C8A /* WriteTransaction.swift in Sources */,
 				E1757CD01F24841C0032FCDC /* UITableViewCellExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
