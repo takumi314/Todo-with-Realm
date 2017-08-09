@@ -40,7 +40,7 @@ class TodoHeaderDueView: UITableViewHeaderFooterView {
 
 extension TodoHeaderDueView: HeaderFooterIdentifiable {}
 
-extension TodoHeaderDueView: TableHViewHeaderTouchable {
+extension TodoHeaderDueView: TableViewHeaderTouchable {
 
     func didTapHeader() {
         delegate?.toggleSection(header: self, section: section)
