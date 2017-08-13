@@ -76,6 +76,7 @@ final class TodoEditController: UIViewController {
         editTableView?.register(TodoHeaderDetailView.nib, forHeaderFooterViewReuseIdentifier: TodoHeaderDetailView.identifer)
         editTableView?.register(TodoHeaderDueView.nib, forHeaderFooterViewReuseIdentifier: TodoHeaderDueView.identifer)
         editTableView?.register(DueCell.nib, forCellReuseIdentifier: DueCell.identifier)
+        editTableView?.register(LocationCell.nib, forHeaderFooterViewReuseIdentifier: LocationCell.identifier)
     }
 
     fileprivate func isUpdated(with todo: Todo, completion: @escaping () -> Void )  -> Bool {

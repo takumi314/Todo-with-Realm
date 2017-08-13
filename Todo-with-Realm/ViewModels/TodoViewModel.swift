@@ -27,6 +27,7 @@ class TodoViewModel: NSObject {
         var task: String = ""
         var detail: String = ""
         var due: Date?
+        var location: String?
     }
 
     var source = Current()
@@ -56,6 +57,12 @@ class TodoViewModel: NSObject {
             dueItem = TodoViewModelDueItem(date: due)
         }
         todoItems.append(dueItem)
+
+        var locationItem = TodoViewModelLocationItem(address: nil)
+        if let lacation = source.location  {
+            locationItem = TodoViewModelLocationItem(address: lacation)
+        }
+        todoItems.append(locationItem)
     }
 
 }
@@ -100,6 +107,10 @@ extension TodoViewModel: UITableViewDataSource {
             }
             break
         case .location:
+            if let cell = tableView.dequeueReusableCell(with: LocationCell.self, for: indexPath), let item = item as? TodoViewModelLocationItem {
+                print(item)
+                return cell
+            }
             break
         }
         return UITableViewCell()
