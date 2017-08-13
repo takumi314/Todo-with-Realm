@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import MapKit
 
 class LocationCell: UITableViewCell {
+    @IBOutlet weak var mapView: MKMapView!
 
 }
 
