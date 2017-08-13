@@ -68,6 +68,7 @@
 		E1FC68161F3B697B008BA493 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1FC68151F3B697B008BA493 /* LocationCell.xib */; };
 		E1FC68181F3B6A66008BA493 /* TodoHeaderLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC68171F3B6A66008BA493 /* TodoHeaderLocationView.swift */; };
 		E1FC681A1F3B6C5A008BA493 /* TodoHeaderLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1FC68191F3B6C5A008BA493 /* TodoHeaderLocationView.xib */; };
+		E1FC681C1F3FFFC0008BA493 /* TodoViewModelLocationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC681B1F3FFFBF008BA493 /* TodoViewModelLocationItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +147,7 @@
 		E1FC68151F3B697B008BA493 /* LocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationCell.xib; path = ViewModels/TodoViews/LocationCell.xib; sourceTree = "<group>"; };
 		E1FC68171F3B6A66008BA493 /* TodoHeaderLocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodoHeaderLocationView.swift; path = ViewModels/TodoHeaderLocationView.swift; sourceTree = "<group>"; };
 		E1FC68191F3B6C5A008BA493 /* TodoHeaderLocationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TodoHeaderLocationView.xib; path = ViewModels/TodoViews/TodoHeaderLocationView.xib; sourceTree = "<group>"; };
+		E1FC681B1F3FFFBF008BA493 /* TodoViewModelLocationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodoViewModelLocationItem.swift; path = ViewModels/TodoViewModelLocationItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 				E1757CF01F2790780032FCDC /* TodoViewModelDueItem.swift */,
 				E1757CD81F263FC30032FCDC /* TodoViewModel.swift */,
 				E1757CDA1F2641CA0032FCDC /* TodoViewModelItem.swift */,
+				E1FC681B1F3FFFBF008BA493 /* TodoViewModelLocationItem.swift */,
 			);
 			name = TodoViewModels;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				E1CC44821F1FA6DE0039CCD2 /* UIAlertController.swift in Sources */,
 				E1757CD61F263DDE0032FCDC /* TodoEditController.swift in Sources */,
 				E1757CD21F24ED630032FCDC /* DateFormatterExtension.swift in Sources */,
+				E1FC681C1F3FFFC0008BA493 /* TodoViewModelLocationItem.swift in Sources */,
 				E140EEE51F30CE85008E8C8A /* MapViewController.swift in Sources */,
 				E1757CDF1F26448A0032FCDC /* TodoHeaderView.swift in Sources */,
 				E1757CFD1F28F8FB0032FCDC /* TodoHeaderDueView.swift in Sources */,
