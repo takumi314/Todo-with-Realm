@@ -239,6 +239,12 @@ extension TodoViewModel: DueCellDelegate {
 
 }
 
+extension TodoViewModel: TodoHeaderLocationViewDelegate {
+    func toggleLocationSection(header: TodoHeaderLocationView, section: Int) {
+        //
+    }
+}
+
 
 
 

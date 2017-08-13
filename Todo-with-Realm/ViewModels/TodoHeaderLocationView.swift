@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 
 protocol TodoHeaderLocationViewDelegate {
-    //
+    func toggleLocationSection(header: TodoHeaderLocationView, section: Int)
 }
 
 class TodoHeaderLocationView: UITableViewHeaderFooterView {
@@ -36,6 +36,9 @@ class TodoHeaderLocationView: UITableViewHeaderFooterView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTapHeader))
+        addGestureRecognizer(tap)
     }
 
 }
@@ -43,5 +46,12 @@ class TodoHeaderLocationView: UITableViewHeaderFooterView {
 extension TodoHeaderLocationView: HeaderFooterIdentifiable {}
 
 extension TodoHeaderLocationView: TableViewHeaderTouchable {
+    func didTapHeader() {
+        delegate?.toggleLocationSection(header: self, section: section)
+    }
+
+    func setCollapsed(collopsed: Bool) {
+    }
+
 
 }
