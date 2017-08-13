@@ -14,6 +14,7 @@ enum TodoViewModelItemType {
     case detail
     case status
     case due
+    case location
 }
 
 protocol TodoViewModelDelegate {
@@ -98,6 +99,8 @@ extension TodoViewModel: UITableViewDataSource {
                 return cell
             }
             break
+        case .location:
+            break
         }
         return UITableViewCell()
     }
@@ -141,6 +144,15 @@ extension TodoViewModel: UITableViewDelegate {
                 header.delegate = self
                 return header
             }
+        case .location:
+            if let header = tableView.dequeueReusableHeaderFooterView(with: TodoHeaderLocationView.self, for: section) {
+                let item = todoItems[section]
+                header.item = item
+                header.section = section
+                header.delegate = self
+                return header
+            }
+            break
         default:
             break
         }
