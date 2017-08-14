@@ -241,7 +241,15 @@ extension TodoViewModel: DueCellDelegate {
 
 extension TodoViewModel: TodoHeaderLocationViewDelegate {
     func toggleLocationSection(header: TodoHeaderLocationView, section: Int) {
-        //
+        var item = todoItems[section]
+        if item.isCollapsible {
+            let isCollapsed = !item.isCollapsed
+            item.isCollapsed = isCollapsed
+            header.setCollapsed(collopsed: isCollapsed)
+
+            todoItems[section] = item
+            reloadSections?(section)
+        }
     }
 }
 

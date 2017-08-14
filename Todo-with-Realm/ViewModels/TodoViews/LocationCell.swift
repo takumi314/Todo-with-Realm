@@ -21,8 +21,9 @@ class LocationCell: UITableViewCell {
 
     // MSRK: - Public properties
 
-    var delegate: LocationCelldelegate?
+    var item: TodoViewModelItem?
 
+    var delegate: LocationCelldelegate?
 
     // MARK: - Life cycle
 
