@@ -10,23 +10,31 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="202" id="V5Y-DK-dSA" customClass="LocationCell" customModule="Todo_with_Realm" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="202"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="231" id="V5Y-DK-dSA" customClass="LocationCell" customModule="Todo_with_Realm" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="373" height="231"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V5Y-DK-dSA" id="hfH-EN-vWx">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="202"/>
+                <rect key="frame" x="0.0" y="0.0" width="373" height="231"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="a5r-q1-5s6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="202"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="a5r-q1-5s6">
+                        <rect key="frame" x="0.0" y="0.0" width="373" height="230.5"/>
+                        <constraints>
+                            <constraint firstAttribute="height" priority="999" constant="200" id="eTB-lu-yoK"/>
+                        </constraints>
                     </mapView>
                 </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="a5r-q1-5s6" secondAttribute="trailing" id="Kyg-ZB-ZLb"/>
+                    <constraint firstItem="a5r-q1-5s6" firstAttribute="leading" secondItem="hfH-EN-vWx" secondAttribute="leading" id="UVp-l6-1gR"/>
+                    <constraint firstItem="a5r-q1-5s6" firstAttribute="top" secondItem="hfH-EN-vWx" secondAttribute="top" id="fBG-zP-5Yw"/>
+                    <constraint firstAttribute="bottom" secondItem="a5r-q1-5s6" secondAttribute="bottom" id="vqH-76-xNs"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="mapView" destination="a5r-q1-5s6" id="6tu-c7-cvD"/>
             </connections>
-            <point key="canvasLocation" x="17.5" y="77"/>
+            <point key="canvasLocation" x="16.5" y="91.5"/>
         </tableViewCell>
     </objects>
 </document>
