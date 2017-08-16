@@ -14,6 +14,7 @@ enum TodoViewModelItemType {
     case detail
     case status
     case due
+    case location
 }
 
 protocol TodoViewModelDelegate {
@@ -26,6 +27,7 @@ class TodoViewModel: NSObject {
         var task: String = ""
         var detail: String = ""
         var due: Date?
+        var location: String?
     }
 
     var source = Current()
@@ -55,6 +57,12 @@ class TodoViewModel: NSObject {
             dueItem = TodoViewModelDueItem(date: due)
         }
         todoItems.append(dueItem)
+
+        var locationItem = TodoViewModelLocationItem(address: nil)
+        if let lacation = source.location  {
+            locationItem = TodoViewModelLocationItem(address: lacation)
+        }
+        todoItems.append(locationItem)
     }
 
 }
@@ -95,6 +103,12 @@ extension TodoViewModel: UITableViewDataSource {
                     cell.picker.date = due
                 }
                 cell.delegate = self
+                return cell
+            }
+            break
+        case .location:
+            if let cell = tableView.dequeueReusableCell(with: LocationCell.self, for: indexPath), let item = item as? TodoViewModelLocationItem {
+                print(item)
                 return cell
             }
             break
@@ -141,6 +155,15 @@ extension TodoViewModel: UITableViewDelegate {
                 header.delegate = self
                 return header
             }
+        case .location:
+            if let header = tableView.dequeueReusableHeaderFooterView(with: TodoHeaderLocationView.self, for: section) {
+                let item = todoItems[section]
+                header.item = item
+                header.section = section
+                header.delegate = self
+                return header
+            }
+            break
         default:
             break
         }
@@ -214,6 +237,20 @@ extension TodoViewModel: DueCellDelegate {
         return nil
     }
 
+}
+
+extension TodoViewModel: TodoHeaderLocationViewDelegate {
+    func toggleLocationSection(header: TodoHeaderLocationView, section: Int) {
+        var item = todoItems[section]
+        if item.isCollapsible {
+            let isCollapsed = !item.isCollapsed
+            item.isCollapsed = isCollapsed
+            header.setCollapsed(collopsed: isCollapsed)
+
+            todoItems[section] = item
+            reloadSections?(section)
+        }
+    }
 }
 
 

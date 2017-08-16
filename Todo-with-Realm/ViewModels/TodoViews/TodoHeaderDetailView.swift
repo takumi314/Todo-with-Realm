@@ -35,7 +35,7 @@ class TodoHeaderDetailView: UITableViewHeaderFooterView {
 
 extension TodoHeaderDetailView: HeaderFooterIdentifiable {}
 
-extension TodoHeaderDetailView: TableHViewHeaderTouchable {}
+extension TodoHeaderDetailView: TableViewHeaderTouchable {}
 
 extension TodoHeaderDetailView: UITextFieldDelegate {
 
