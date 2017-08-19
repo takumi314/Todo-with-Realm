@@ -12,7 +12,7 @@ import MapKit
 final class MapViewController: UIViewController {
 
     struct Const {
-        let address = "Adress"
+        let address = "Address"
     }
 
     let const = Const()
