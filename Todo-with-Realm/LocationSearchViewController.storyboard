@@ -20,22 +20,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Address or Landmark" showsSearchResultsButton="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z0r-JD-Iho">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <searchBar contentMode="redraw" placeholder="Address or Landmark" showsSearchResultsButton="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z0r-JD-Iho">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                 <scopeButtonTitles>
                                     <string>Title</string>
                                     <string>Title</string>
                                 </scopeButtonTitles>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f85-kU-YWZ">
-                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f85-kU-YWZ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationSearchResultCell" textLabel="lw2-Tv-1U1" rowHeight="30" style="IBUITableViewCellStyleDefault" id="VUQ-IG-ZhB">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="30"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VUQ-IG-ZhB" id="mtE-Tq-kWs">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="29.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="lw2-Tv-1U1">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="29.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="f85-kU-YWZ" firstAttribute="leading" secondItem="sI4-Lb-2a0" secondAttribute="leading" id="JqS-HV-QEE"/>
+                            <constraint firstItem="z0r-JD-Iho" firstAttribute="leading" secondItem="sI4-Lb-2a0" secondAttribute="leading" id="OfL-zK-CRT"/>
+                            <constraint firstItem="f85-kU-YWZ" firstAttribute="top" secondItem="z0r-JD-Iho" secondAttribute="bottom" id="OgU-hB-fE0"/>
+                            <constraint firstItem="bu8-BC-M0k" firstAttribute="top" secondItem="f85-kU-YWZ" secondAttribute="bottom" id="cMS-R0-4z3"/>
+                            <constraint firstAttribute="trailing" secondItem="z0r-JD-Iho" secondAttribute="trailing" id="eO5-GW-x5p"/>
+                            <constraint firstItem="z0r-JD-Iho" firstAttribute="top" secondItem="0hw-Ev-K8f" secondAttribute="bottom" id="gAn-Q4-XlW"/>
+                            <constraint firstAttribute="trailing" secondItem="f85-kU-YWZ" secondAttribute="trailing" id="zzZ-lW-O0A"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="z0r-JD-Iho" id="pS0-BU-cyp"/>
