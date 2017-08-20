@@ -30,6 +30,8 @@ final class MapViewController: UIViewController {
 
     var map: LocationView?
 
+    var locationSearch: LocationSearchViewController? = nil
+
     // MARK: - Life cycle
 
     override func viewDidLoad() {
@@ -87,8 +89,34 @@ final class MapViewController: UIViewController {
         dismiss(animated: true, completion:nil)
     }
 
-    func didTapSearchItem() {
-        
+    @objc fileprivate func didTapSearchItem() {
+        locationSearch = LocationSearchViewController.instantiate()
+        guard let locationSearch = locationSearch else {
+            return
+        }
+        locationSearch.region = map?.region
+        locationSearch.search = { [weak self] completion in
+            guard let this = self, let map = this.map else {
+                return
+            }
+            let r = MKLocalSearchRequest(completion: completion)
+            var annotaitons = [MKAnnotation]()
+            MKLocalSearch(request: r).start { response, error in
+                if error != nil {
+                    print("something is wrong")
+                    return
+                }
+                response?.mapItems.forEach { item in
+                    let a = MKPointAnnotation()
+                    a.coordinate = item.placemark.coordinate
+                    a.title = item.placemark.title
+                    annotaitons.append(a)
+                }
+            }
+            map.addAnnotations(annotaitons)
+            map.showAnnotations(map.annotations, animated: true)
+        }
+        present(locationSearch, animated: true, completion: nil)
     }
 
 }
