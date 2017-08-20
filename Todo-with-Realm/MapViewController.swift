@@ -11,6 +11,17 @@ import MapKit
 
 final class MapViewController: UIViewController {
 
+    enum selecter {
+        case didTapSearchItem
+
+        func selecter() -> Selector {
+            switch self {
+            case .didTapSearchItem:
+                return #selector(MapViewController.didTapSearchItem)
+            }
+        }
+    }
+
     struct Const {
         let address = "Address"
     }
@@ -29,6 +40,8 @@ final class MapViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let searchItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: selecter.didTapSearchItem.selecter())
+        self.navigationItem.rightBarButtonItems = [searchItem]
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -72,6 +85,10 @@ final class MapViewController: UIViewController {
 
     private func close() {
         dismiss(animated: true, completion:nil)
+    }
+
+    func didTapSearchItem() {
+        
     }
 
 }
