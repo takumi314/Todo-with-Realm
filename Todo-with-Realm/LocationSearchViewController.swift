@@ -10,9 +10,15 @@ import UIKit
 
 final class LocationSearchViewController: UIViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
+
+
     // MARK: - Life cycle
 
-    
+    override func viewDidLoad() {
+        viewDidLoad()
+    }
 
 
 }
