@@ -21,7 +21,7 @@ final class LocationSearchViewController: UIViewController {
 
     var region: MKCoordinateRegion? = nil
 
-    var search: ((_ completion: MKLocalSearchCompletion) -> Void)? = nil
+    var adopt: ((_ completion: MKLocalSearchCompletion) -> Void)? = nil
 
     // MARK: - private properties
 
@@ -153,7 +153,7 @@ extension LocationSearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // 検索結果をタップすると, MKLocalSearchが実行される. 地図画面上にピンを立てる
         if source.isEmpty { return }
-        search?(source[indexPath.row])
+        adopt?(source[indexPath.row])
         onEnd()
     }
 

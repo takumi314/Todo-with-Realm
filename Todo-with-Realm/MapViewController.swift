@@ -30,7 +30,16 @@ final class MapViewController: UIViewController {
 
     var map: LocationView?
 
-    var locationSearch: LocationSearchViewController? = nil
+    // MARK: - Private properties
+
+    fileprivate var pinItems = [MKAnnotation]() {
+        didSet {
+            guard let map = self.map, pinItems.count > 0 else {
+                return
+            }
+            map.showAnnotations(pinItems, animated: true)
+        }
+    }
 
     // MARK: - Life cycle
 
@@ -86,37 +95,43 @@ final class MapViewController: UIViewController {
     }
 
     private func close() {
-        dismiss(animated: true, completion:nil)
+        dismiss(animated: true) { [weak self] in
+            LocationListener.shared.delegate = nil
+            LocationListener.shared.close()
+            self?.destoryMap()
+        }
     }
 
     @objc fileprivate func didTapSearchItem() {
-        locationSearch = LocationSearchViewController.instantiate()
-        guard let locationSearch = locationSearch else {
-            return
-        }
+        let locationSearch = LocationSearchViewController.instantiate()
         locationSearch.region = map?.region
-        locationSearch.search = { [weak self] completion in
-            guard let this = self, let map = this.map else {
+        locationSearch.adopt = { [weak self] completion in
+            let request = MKLocalSearchRequest(completion: completion)
+            self?.search(with: request)
+            if let annotations = self?.pinItems {
+                self?.map?.addAnnotations(annotations)
+            }
+        }
+        locationSearch.modalPresentationStyle = .overCurrentContext
+        locationSearch.modalTransitionStyle = .crossDissolve
+        present(locationSearch, animated: true, completion: nil)
+    }
+
+    fileprivate func search(with request: MKLocalSearchRequest) {
+        MKLocalSearch(request: request).start { [weak self] response, error in
+            if error != nil {
+                print("something is wrong")
                 return
             }
-            let r = MKLocalSearchRequest(completion: completion)
             var annotaitons = [MKAnnotation]()
-            MKLocalSearch(request: r).start { response, error in
-                if error != nil {
-                    print("something is wrong")
-                    return
-                }
-                response?.mapItems.forEach { item in
-                    let a = MKPointAnnotation()
-                    a.coordinate = item.placemark.coordinate
-                    a.title = item.placemark.title
-                    annotaitons.append(a)
-                }
+            response?.mapItems.forEach { item in
+                let a = MKPointAnnotation()
+                a.coordinate = item.placemark.coordinate
+                a.title = item.placemark.name
+                annotaitons.append(a)
             }
-            map.addAnnotations(annotaitons)
-            map.showAnnotations(map.annotations, animated: true)
+            self?.pinItems = annotaitons
         }
-        present(locationSearch, animated: true, completion: nil)
     }
 
 }
