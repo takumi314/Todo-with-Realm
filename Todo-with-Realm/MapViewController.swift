@@ -11,13 +11,35 @@ import MapKit
 
 final class MapViewController: UIViewController {
 
+    enum selecter {
+        case didTapSearchItem
+
+        func selecter() -> Selector {
+            switch self {
+            case .didTapSearchItem:
+                return #selector(MapViewController.didTapSearchItem)
+            }
+        }
+    }
+
     struct Const {
-        let address = "Adress"
+        let address = "Address"
     }
 
     let const = Const()
 
     var map: LocationView?
+
+    // MARK: - Private properties
+
+    fileprivate var pinItems = [MKAnnotation]() {
+        didSet {
+            guard let map = self.map, pinItems.count > 0 else {
+                return
+            }
+            map.showAnnotations(pinItems, animated: true)
+        }
+    }
 
     // MARK: - Life cycle
 
@@ -29,13 +51,8 @@ final class MapViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    }
-
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        LocationListener.shared.delegate = nil
-        LocationListener.shared.close()
-        destoryMap()
+        let searchItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: selecter.didTapSearchItem.selecter())
+        self.navigationItem.rightBarButtonItems = [searchItem]
     }
 
     // MARK: - Private methods
@@ -71,7 +88,43 @@ final class MapViewController: UIViewController {
     }
 
     private func close() {
-        dismiss(animated: true, completion:nil)
+        dismiss(animated: true) { [weak self] in
+            LocationListener.shared.delegate = nil
+            LocationListener.shared.close()
+            self?.destoryMap()
+        }
+    }
+
+    @objc fileprivate func didTapSearchItem() {
+        let locationSearch = LocationSearchViewController.instantiate()
+        locationSearch.region = map?.region
+        locationSearch.adopt = { [weak self] completion in
+            let request = MKLocalSearchRequest(completion: completion)
+            self?.search(with: request)
+            if let annotations = self?.pinItems {
+                self?.map?.addAnnotations(annotations)
+            }
+        }
+        locationSearch.modalPresentationStyle = .overCurrentContext
+        locationSearch.modalTransitionStyle = .crossDissolve
+        present(locationSearch, animated: true, completion: nil)
+    }
+
+    fileprivate func search(with request: MKLocalSearchRequest) {
+        MKLocalSearch(request: request).start { [weak self] response, error in
+            if error != nil {
+                print("something is wrong")
+                return
+            }
+            var annotaitons = [MKAnnotation]()
+            response?.mapItems.forEach { item in
+                let a = MKPointAnnotation()
+                a.coordinate = item.placemark.coordinate
+                a.title = item.placemark.name
+                annotaitons.append(a)
+            }
+            self?.pinItems = annotaitons
+        }
     }
 
 }
@@ -81,11 +134,11 @@ final class MapViewController: UIViewController {
 extension MapViewController {
 
     fileprivate func address(from location: CLLocation) {
-        guard let map = map else { return }
+        guard let map = map else {
+            return
+        }
         let position = location.coordinate
-        let geocoder = CLGeocoder()
-        
-        geocoder.reverseGeocodeLocation(location) { [weak self] (placemarks , error) in
+        CLGeocoder().reverseGeocodeLocation(location) { [weak self] (placemarks , error) in
             guard let this = self else { return }
             if let error = error {
                 print(error.localizedDescription)

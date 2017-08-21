@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E140EED71F2F6751008E8C8A /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140EED61F2F6751008E8C8A /* Location.swift */; };
+		E140EED91F2F7236008E8C8A /* WriteTransaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140EED81F2F7236008E8C8A /* WriteTransaction.swift */; };
+		E140EEDB1F2F7364008E8C8A /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140EEDA1F2F7364008E8C8A /* Container.swift */; };
+		E140EEDD1F2F769F008E8C8A /* LocationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140EEDC1F2F769F008E8C8A /* LocationRepository.swift */; };
+		E140EEDF1F2F791D008E8C8A /* FetchedResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140EEDE1F2F791D008E8C8A /* FetchedResults.swift */; };
 		E140EEE51F30CE85008E8C8A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140EEE41F30CE85008E8C8A /* MapViewController.swift */; };
 		E140EEE71F30CF01008E8C8A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E140EEE61F30CF01008E8C8A /* MapKit.framework */; };
 		E140EEE91F30E1EF008E8C8A /* LocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E140EEE81F30E1EF008E8C8A /* LocationView.swift */; };
@@ -59,6 +64,13 @@
 		E1CC44821F1FA6DE0039CCD2 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CC44811F1FA6DE0039CCD2 /* UIAlertController.swift */; };
 		E1FC68101F35C2D1008BA493 /* LocationListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC680F1F35C2D1008BA493 /* LocationListener.swift */; };
 		E1FC68121F35C2FA008BA493 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1FC68111F35C2FA008BA493 /* CoreLocation.framework */; };
+		E1FC68141F3B6874008BA493 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC68131F3B6874008BA493 /* LocationCell.swift */; };
+		E1FC68161F3B697B008BA493 /* LocationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1FC68151F3B697B008BA493 /* LocationCell.xib */; };
+		E1FC68181F3B6A66008BA493 /* TodoHeaderLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC68171F3B6A66008BA493 /* TodoHeaderLocationView.swift */; };
+		E1FC681A1F3B6C5A008BA493 /* TodoHeaderLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1FC68191F3B6C5A008BA493 /* TodoHeaderLocationView.xib */; };
+		E1FC681C1F3FFFC0008BA493 /* TodoViewModelLocationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC681B1F3FFFBF008BA493 /* TodoViewModelLocationItem.swift */; };
+		E1FC681E1F48A293008BA493 /* LocationSearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1FC681D1F48A293008BA493 /* LocationSearchViewController.storyboard */; };
+		E1FC68201F48A555008BA493 /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC681F1F48A555008BA493 /* LocationSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +84,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E140EED61F2F6751008E8C8A /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		E140EED81F2F7236008E8C8A /* WriteTransaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WriteTransaction.swift; sourceTree = "<group>"; };
+		E140EEDA1F2F7364008E8C8A /* Container.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
+		E140EEDC1F2F769F008E8C8A /* LocationRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationRepository.swift; sourceTree = "<group>"; };
+		E140EEDE1F2F791D008E8C8A /* FetchedResults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResults.swift; sourceTree = "<group>"; };
 		E140EEE41F30CE85008E8C8A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		E140EEE61F30CF01008E8C8A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E140EEE81F30E1EF008E8C8A /* LocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationView.swift; sourceTree = "<group>"; };
@@ -128,6 +145,13 @@
 		E1CC44811F1FA6DE0039CCD2 /* UIAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertController.swift; sourceTree = "<group>"; };
 		E1FC680F1F35C2D1008BA493 /* LocationListener.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationListener.swift; sourceTree = "<group>"; };
 		E1FC68111F35C2FA008BA493 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E1FC68131F3B6874008BA493 /* LocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationCell.swift; path = ViewModels/TodoViews/LocationCell.swift; sourceTree = "<group>"; };
+		E1FC68151F3B697B008BA493 /* LocationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationCell.xib; path = ViewModels/TodoViews/LocationCell.xib; sourceTree = "<group>"; };
+		E1FC68171F3B6A66008BA493 /* TodoHeaderLocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodoHeaderLocationView.swift; path = ViewModels/TodoHeaderLocationView.swift; sourceTree = "<group>"; };
+		E1FC68191F3B6C5A008BA493 /* TodoHeaderLocationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TodoHeaderLocationView.xib; path = ViewModels/TodoViews/TodoHeaderLocationView.xib; sourceTree = "<group>"; };
+		E1FC681B1F3FFFBF008BA493 /* TodoViewModelLocationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodoViewModelLocationItem.swift; path = ViewModels/TodoViewModelLocationItem.swift; sourceTree = "<group>"; };
+		E1FC681D1F48A293008BA493 /* LocationSearchViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LocationSearchViewController.storyboard; sourceTree = "<group>"; };
+		E1FC681F1F48A555008BA493 /* LocationSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +185,7 @@
 				E1757CF01F2790780032FCDC /* TodoViewModelDueItem.swift */,
 				E1757CD81F263FC30032FCDC /* TodoViewModel.swift */,
 				E1757CDA1F2641CA0032FCDC /* TodoViewModelItem.swift */,
+				E1FC681B1F3FFFBF008BA493 /* TodoViewModelLocationItem.swift */,
 			);
 			name = TodoViewModels;
 			sourceTree = "<group>";
@@ -175,12 +200,16 @@
 				E1757CE81F2660060032FCDC /* TaskCell.xib */,
 				E1757CEE1F2790160032FCDC /* DueCell.swift */,
 				E1757CF21F2792550032FCDC /* DueCell.xib */,
+				E1FC68131F3B6874008BA493 /* LocationCell.swift */,
+				E1FC68151F3B697B008BA493 /* LocationCell.xib */,
 				E1757CF81F28E9800032FCDC /* TodoHeaderTaskView.swift */,
 				E1757CFA1F28F0540032FCDC /* TodoHeaderTaskView.xib */,
 				E1757CFC1F28F8FB0032FCDC /* TodoHeaderDueView.swift */,
 				E1757CFE1F28FBB40032FCDC /* TodoHeaderDueView.xib */,
 				E1757D001F290CFD0032FCDC /* TodoHeaderDetailView.swift */,
 				E1757D021F2910700032FCDC /* TodoHeaderDetailView.xib */,
+				E1FC68171F3B6A66008BA493 /* TodoHeaderLocationView.swift */,
+				E1FC68191F3B6C5A008BA493 /* TodoHeaderLocationView.xib */,
 			);
 			name = TodoViews;
 			sourceTree = "<group>";
@@ -246,6 +275,7 @@
 				E1A9C6AC1F1D0B24002B91C8 /* Todo.swift */,
 				E1A9C6AA1F1D09A9002B91C8 /* User.swift */,
 				E1A9C6B11F1D1083002B91C8 /* BaseModel.swift */,
+				E140EED61F2F6751008E8C8A /* Location.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -283,6 +313,7 @@
 				E1757CD31F24F9AD0032FCDC /* TodoInputController.swift */,
 				E1757CD51F263DDE0032FCDC /* TodoEditController.swift */,
 				E140EEE41F30CE85008E8C8A /* MapViewController.swift */,
+				E1FC681F1F48A555008BA493 /* LocationSearchViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -295,6 +326,7 @@
 				E1757CC71F23B5640032FCDC /* TodoDetailController.storyboard */,
 				E1757CE21F2647850032FCDC /* TodoEditController.storyboard */,
 				E140EEE81F30E1EF008E8C8A /* LocationView.swift */,
+				E1FC681D1F48A293008BA493 /* LocationSearchViewController.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -322,6 +354,10 @@
 			isa = PBXGroup;
 			children = (
 				E1A9C6B51F1D2506002B91C8 /* TodoRepository.swift */,
+				E140EEDC1F2F769F008E8C8A /* LocationRepository.swift */,
+				E140EEDE1F2F791D008E8C8A /* FetchedResults.swift */,
+				E140EED81F2F7236008E8C8A /* WriteTransaction.swift */,
+				E140EEDA1F2F7364008E8C8A /* Container.swift */,
 			);
 			name = Repositories;
 			sourceTree = "<group>";
@@ -413,6 +449,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1A9C6891F1D044D002B91C8 /* LaunchScreen.storyboard in Resources */,
+				E1FC68161F3B697B008BA493 /* LocationCell.xib in Resources */,
 				E1A9C6861F1D044D002B91C8 /* Assets.xcassets in Resources */,
 				E1757CF31F2792550032FCDC /* DueCell.xib in Resources */,
 				E1757CE31F2647850032FCDC /* TodoEditController.storyboard in Resources */,
@@ -421,6 +458,8 @@
 				E1757CFB1F28F0540032FCDC /* TodoHeaderTaskView.xib in Resources */,
 				E1757CFF1F28FBB40032FCDC /* TodoHeaderDueView.xib in Resources */,
 				E1757CE91F2660060032FCDC /* TaskCell.xib in Resources */,
+				E1FC681A1F3B6C5A008BA493 /* TodoHeaderLocationView.xib in Resources */,
+				E1FC681E1F48A293008BA493 /* LocationSearchViewController.storyboard in Resources */,
 				E1757CC81F23B5650032FCDC /* TodoDetailController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -457,6 +496,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E140EEDD1F2F769F008E8C8A /* LocationRepository.swift in Sources */,
 				E1A9C6B21F1D1083002B91C8 /* BaseModel.swift in Sources */,
 				E1757CE11F26453B0032FCDC /* CellIdentifiable.swift in Sources */,
 				E1CC447A1F1E60EF0039CCD2 /* TodoListController.swift in Sources */,
@@ -470,6 +510,7 @@
 				E1CC44821F1FA6DE0039CCD2 /* UIAlertController.swift in Sources */,
 				E1757CD61F263DDE0032FCDC /* TodoEditController.swift in Sources */,
 				E1757CD21F24ED630032FCDC /* DateFormatterExtension.swift in Sources */,
+				E1FC681C1F3FFFC0008BA493 /* TodoViewModelLocationItem.swift in Sources */,
 				E140EEE51F30CE85008E8C8A /* MapViewController.swift in Sources */,
 				E1757CDF1F26448A0032FCDC /* TodoHeaderView.swift in Sources */,
 				E1757CFD1F28F8FB0032FCDC /* TodoHeaderDueView.swift in Sources */,
@@ -478,21 +519,28 @@
 				E1CC447C1F1E667B0039CCD2 /* TodoCell.swift in Sources */,
 				E1757CE71F265EF30032FCDC /* TodoViewModelTaskItem.swift in Sources */,
 				E1757CD91F263FC30032FCDC /* TodoViewModel.swift in Sources */,
+				E140EEDF1F2F791D008E8C8A /* FetchedResults.swift in Sources */,
+				E140EEDB1F2F7364008E8C8A /* Container.swift in Sources */,
 				E1757CF11F2790780032FCDC /* TodoViewModelDueItem.swift in Sources */,
 				E1A9C6B61F1D2506002B91C8 /* TodoRepository.swift in Sources */,
 				E1757CCC1F247FC30032FCDC /* NibBase.swift in Sources */,
 				E1757CDB1F2641CA0032FCDC /* TodoViewModelItem.swift in Sources */,
 				E140EEE91F30E1EF008E8C8A /* LocationView.swift in Sources */,
 				E1A9C67F1F1D044D002B91C8 /* AppDelegate.swift in Sources */,
+				E1FC68181F3B6A66008BA493 /* TodoHeaderLocationView.swift in Sources */,
 				E1757CE51F265CFF0032FCDC /* TaskCell.swift in Sources */,
 				E1757CEF1F2790160032FCDC /* DueCell.swift in Sources */,
+				E140EED71F2F6751008E8C8A /* Location.swift in Sources */,
 				E1757CD41F24F9AD0032FCDC /* TodoInputController.swift in Sources */,
+				E1FC68141F3B6874008BA493 /* LocationCell.swift in Sources */,
 				E1FC68101F35C2D1008BA493 /* LocationListener.swift in Sources */,
 				E1757CCA1F23BBB30032FCDC /* StoryboardBase.swift in Sources */,
 				E1A9C6AB1F1D09A9002B91C8 /* User.swift in Sources */,
 				E1757CF71F279DA20032FCDC /* UITableViewHeaderFooterView.swift in Sources */,
 				E1757CF91F28E9800032FCDC /* TodoHeaderTaskView.swift in Sources */,
 				E1A9C6AD1F1D0B24002B91C8 /* Todo.swift in Sources */,
+				E1FC68201F48A555008BA493 /* LocationSearchViewController.swift in Sources */,
+				E140EED91F2F7236008E8C8A /* WriteTransaction.swift in Sources */,
 				E1757CD01F24841C0032FCDC /* UITableViewCellExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -638,7 +686,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Todo-with-Realm/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.oka.Todo-with-Realm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -656,7 +704,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Todo-with-Realm/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.oka.Todo-with-Realm";
 				PRODUCT_NAME = "$(TARGET_NAME)";

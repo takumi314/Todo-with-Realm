@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Location Search View Controller-->
+        <scene sceneID="eba-xR-zCJ">
+            <objects>
+                <viewController storyboardIdentifier="LocationSearchViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SDw-Z1-hCB" customClass="LocationSearchViewController" customModule="Todo_with_Realm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0hw-Ev-K8f"/>
+                        <viewControllerLayoutGuide type="bottom" id="bu8-BC-M0k"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sI4-Lb-2a0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i4P-lb-cOf">
+                                <rect key="frame" x="31" y="70" width="313" height="527"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" placeholder="Address or Landmark" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z0r-JD-Iho">
+                                        <rect key="frame" x="0.0" y="0.0" width="313" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Hmz-cC-yfY"/>
+                                        </constraints>
+                                        <textInputTraits key="textInputTraits" spellCheckingType="no" returnKeyType="done"/>
+                                        <scopeButtonTitles>
+                                            <string>Title</string>
+                                            <string>Title</string>
+                                        </scopeButtonTitles>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f85-kU-YWZ">
+                                        <rect key="frame" x="0.0" y="40" width="313" height="487"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationSearchResultCell" textLabel="EmF-z5-iwX" rowHeight="30" style="IBUITableViewCellStyleDefault" id="ztI-DF-oAV">
+                                                <rect key="frame" x="0.0" y="28" width="313" height="30"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ztI-DF-oAV" id="i1Q-kg-MET">
+                                                    <rect key="frame" x="0.0" y="0.0" width="313" height="29.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EmF-z5-iwX">
+                                                            <rect key="frame" x="15" y="0.0" width="283" height="29.5"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </tableViewCellContentView>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <sections/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="z0r-JD-Iho" firstAttribute="top" secondItem="i4P-lb-cOf" secondAttribute="top" id="0Ft-Su-ja3"/>
+                                    <constraint firstAttribute="trailing" secondItem="f85-kU-YWZ" secondAttribute="trailing" id="Cen-bi-pfD"/>
+                                    <constraint firstItem="z0r-JD-Iho" firstAttribute="leading" secondItem="i4P-lb-cOf" secondAttribute="leading" id="hbe-qf-6Bd"/>
+                                    <constraint firstItem="f85-kU-YWZ" firstAttribute="leading" secondItem="i4P-lb-cOf" secondAttribute="leading" id="jwC-Z4-ow0"/>
+                                    <constraint firstAttribute="trailing" secondItem="z0r-JD-Iho" secondAttribute="trailing" id="lN8-Zv-Cn8"/>
+                                    <constraint firstAttribute="bottom" secondItem="f85-kU-YWZ" secondAttribute="bottom" id="nKF-LR-9iH"/>
+                                    <constraint firstItem="f85-kU-YWZ" firstAttribute="top" secondItem="z0r-JD-Iho" secondAttribute="bottom" id="qOa-nE-hbd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="i4P-lb-cOf" secondAttribute="trailing" constant="15" id="19j-Ze-QyF"/>
+                            <constraint firstItem="i4P-lb-cOf" firstAttribute="top" secondItem="0hw-Ev-K8f" secondAttribute="bottom" constant="50" id="7CN-SE-R67"/>
+                            <constraint firstItem="i4P-lb-cOf" firstAttribute="centerX" secondItem="sI4-Lb-2a0" secondAttribute="centerX" id="KDD-xB-YGp"/>
+                            <constraint firstItem="i4P-lb-cOf" firstAttribute="leading" secondItem="sI4-Lb-2a0" secondAttribute="leadingMargin" constant="15" id="OrJ-3e-NDy"/>
+                            <constraint firstItem="i4P-lb-cOf" firstAttribute="centerY" secondItem="sI4-Lb-2a0" secondAttribute="centerY" id="TeS-XF-17G"/>
+                            <constraint firstItem="bu8-BC-M0k" firstAttribute="top" secondItem="i4P-lb-cOf" secondAttribute="bottom" constant="70" id="ZiU-jp-cGa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="z0r-JD-Iho" id="pS0-BU-cyp"/>
+                        <outlet property="tableView" destination="f85-kU-YWZ" id="vcW-uU-B07"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ws9-uw-w9y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-479.19999999999999" y="41.829085457271368"/>
+        </scene>
+    </scenes>
+</document>

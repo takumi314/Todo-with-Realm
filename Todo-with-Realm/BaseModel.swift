@@ -7,6 +7,21 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol BaseModel {
+}
+
+protocol Persistable {
+    associatedtype ManagedObject: RealmSwift.Object
+    init(_ managedObject: ManagedObject)
+    func managedObject() -> ManagedObject
+
+    associatedtype PropertyValue: PropertyValueType
+}
+
+public typealias PropertyValuePair = (name: String, value: Any)
+
+public protocol PropertyValueType {
+    var propertyValuePair: PropertyValuePair { get }
 }

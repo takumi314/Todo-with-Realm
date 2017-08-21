@@ -21,13 +21,13 @@ extension UITableViewHeaderFooterView {
     
 }
 
-protocol TableHViewHeaderTouchable {
+protocol TableViewHeaderTouchable {
     var section: Int { get }
     func didTapHeader()
     func setCollapsed(collopsed: Bool)
 }
 
-extension TableHViewHeaderTouchable where Self: UITableViewHeaderFooterView  {
+extension TableViewHeaderTouchable where Self: UITableViewHeaderFooterView  {
 
     func didTapHeader() {
     }
