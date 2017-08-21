@@ -55,13 +55,6 @@ final class MapViewController: UIViewController {
         self.navigationItem.rightBarButtonItems = [searchItem]
     }
 
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        LocationListener.shared.delegate = nil
-        LocationListener.shared.close()
-        destoryMap()
-    }
-
     // MARK: - Private methods
 
     private func createMap() {
