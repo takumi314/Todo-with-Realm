@@ -134,11 +134,11 @@ final class MapViewController: UIViewController {
 extension MapViewController {
 
     fileprivate func address(from location: CLLocation) {
-        guard let map = map else { return }
+        guard let map = map else {
+            return
+        }
         let position = location.coordinate
-        let geocoder = CLGeocoder()
-        
-        geocoder.reverseGeocodeLocation(location) { [weak self] (placemarks , error) in
+        CLGeocoder().reverseGeocodeLocation(location) { [weak self] (placemarks , error) in
             guard let this = self else { return }
             if let error = error {
                 print(error.localizedDescription)
