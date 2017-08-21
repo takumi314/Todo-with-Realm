@@ -69,6 +69,8 @@
 		E1FC68181F3B6A66008BA493 /* TodoHeaderLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC68171F3B6A66008BA493 /* TodoHeaderLocationView.swift */; };
 		E1FC681A1F3B6C5A008BA493 /* TodoHeaderLocationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E1FC68191F3B6C5A008BA493 /* TodoHeaderLocationView.xib */; };
 		E1FC681C1F3FFFC0008BA493 /* TodoViewModelLocationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC681B1F3FFFBF008BA493 /* TodoViewModelLocationItem.swift */; };
+		E1FC681E1F48A293008BA493 /* LocationSearchViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1FC681D1F48A293008BA493 /* LocationSearchViewController.storyboard */; };
+		E1FC68201F48A555008BA493 /* LocationSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1FC681F1F48A555008BA493 /* LocationSearchViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,6 +150,8 @@
 		E1FC68171F3B6A66008BA493 /* TodoHeaderLocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodoHeaderLocationView.swift; path = ViewModels/TodoHeaderLocationView.swift; sourceTree = "<group>"; };
 		E1FC68191F3B6C5A008BA493 /* TodoHeaderLocationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TodoHeaderLocationView.xib; path = ViewModels/TodoViews/TodoHeaderLocationView.xib; sourceTree = "<group>"; };
 		E1FC681B1F3FFFBF008BA493 /* TodoViewModelLocationItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TodoViewModelLocationItem.swift; path = ViewModels/TodoViewModelLocationItem.swift; sourceTree = "<group>"; };
+		E1FC681D1F48A293008BA493 /* LocationSearchViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LocationSearchViewController.storyboard; sourceTree = "<group>"; };
+		E1FC681F1F48A555008BA493 /* LocationSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationSearchViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +313,7 @@
 				E1757CD31F24F9AD0032FCDC /* TodoInputController.swift */,
 				E1757CD51F263DDE0032FCDC /* TodoEditController.swift */,
 				E140EEE41F30CE85008E8C8A /* MapViewController.swift */,
+				E1FC681F1F48A555008BA493 /* LocationSearchViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -321,6 +326,7 @@
 				E1757CC71F23B5640032FCDC /* TodoDetailController.storyboard */,
 				E1757CE21F2647850032FCDC /* TodoEditController.storyboard */,
 				E140EEE81F30E1EF008E8C8A /* LocationView.swift */,
+				E1FC681D1F48A293008BA493 /* LocationSearchViewController.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -453,6 +459,7 @@
 				E1757CFF1F28FBB40032FCDC /* TodoHeaderDueView.xib in Resources */,
 				E1757CE91F2660060032FCDC /* TaskCell.xib in Resources */,
 				E1FC681A1F3B6C5A008BA493 /* TodoHeaderLocationView.xib in Resources */,
+				E1FC681E1F48A293008BA493 /* LocationSearchViewController.storyboard in Resources */,
 				E1757CC81F23B5650032FCDC /* TodoDetailController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,6 +539,7 @@
 				E1757CF71F279DA20032FCDC /* UITableViewHeaderFooterView.swift in Sources */,
 				E1757CF91F28E9800032FCDC /* TodoHeaderTaskView.swift in Sources */,
 				E1A9C6AD1F1D0B24002B91C8 /* Todo.swift in Sources */,
+				E1FC68201F48A555008BA493 /* LocationSearchViewController.swift in Sources */,
 				E140EED91F2F7236008E8C8A /* WriteTransaction.swift in Sources */,
 				E1757CD01F24841C0032FCDC /* UITableViewCellExtension.swift in Sources */,
 			);
@@ -678,7 +686,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Todo-with-Realm/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.oka.Todo-with-Realm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -696,7 +704,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "Todo-with-Realm/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "jp.oka.Todo-with-Realm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
